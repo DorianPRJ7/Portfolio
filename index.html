@@ -14,6 +14,7 @@
             --text: #e6e9ef;
             --muted: #9aa3b2;
             --accent: #59f9ff;
+            --accent-2: #7b6cff;
         }
 
         * {
@@ -37,10 +38,11 @@
 
         h1 {
             font-size: clamp(2.2rem, 5vw, 3.5rem);
-            background: linear-gradient(90deg, var(--accent), #7b6cff);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         p {
@@ -49,16 +51,19 @@
             margin-bottom: 2rem;
         }
 
-        .loader {
+        .loader-container {
             display: flex;
-            align-items: center;
             justify-content: center;
+        }
+
+        .loader {
             width: 48px;
             height: 48px;
             border: 3px solid var(--muted);
             border-top-color: var(--accent);
             border-radius: 50%;
             animation: spin 1.2s linear infinite;
+            margin: 0 auto;
         }
 
         @keyframes spin {
@@ -76,8 +81,10 @@
 <body>
 <main>
     <h1>Portfolio en cours de refonte</h1>
-    <p>Une nouvelle version arrive bientôt. Merci de votre patience !</p>
-    <div class="loader"></div>
+    <p>Une nouvelle version arrive bientôt...</p>
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
 </main>
 
 <footer>&copy; 2025 Dorian Pareja</footer>
