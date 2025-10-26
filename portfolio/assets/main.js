@@ -92,6 +92,7 @@ function projectCardTemplate(p, idx) {
 }
 
 function renderWorks() {
+    if (!rail) return;
     rail.innerHTML = PROJECTS.map((p, i) => projectCardTemplate(p, i)).join('');
 
     rail.querySelectorAll('.read-toggle').forEach(btn => {
@@ -125,6 +126,7 @@ renderWorks();
 
 // ===== Navigation clavier (→ = k/K, ← = j/J)
 addEventListener('keydown', (e) => {
+    if (!rail) return;
     if (['ArrowRight','k','K'].includes(e.key)) rail.scrollBy({ left: 420, behavior: 'smooth' });
     if (['ArrowLeft','j','J'].includes(e.key)) rail.scrollBy({ left: -420, behavior: 'smooth' });
 });
@@ -140,3 +142,20 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: .15 });
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* === STABILISATION MINIMALE ===
+   1) Recalcule les métriques (header/sections) quand les polices web sont prêtes,
+      pour éviter les décalages de layout/activation trop tardive.
+   2) Fallback reveal si jamais l’observer tarde (chargement atypique).
+*/
+if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+        // Déclenche un recalcul global léger (ton header.js écoute resize)
+        window.dispatchEvent(new Event('resize'));
+    });
+}
+
+// Fallback reveal (au cas où) : montre les éléments si pas encore révélés
+setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+}, 1200);

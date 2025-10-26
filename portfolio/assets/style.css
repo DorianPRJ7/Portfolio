@@ -305,6 +305,21 @@ html[data-theme="light"] .thumb{
     }
 }
 
+
+/* === Stabilité du carrousel de projets (évite le tassement en cas de chargement atypique) === */
+.rail{
+    /* fallback si gap est ignoré transitoirement par le moteur */
+}
+@supports not (gap: 24px) {
+    .rail .work + .work { margin-left:24px; }
+}
+
+/* Empêche les cartes de rétrécir trop quand les polices/JS se chargent */
+.work{
+    min-width:300px;     /* filet de sécurité */
+    flex-shrink:0;       /* ne pas compresser la carte */
+}
+
 /* =================== Toggle Thème =================== */
 #theme{width:42px; height:42px; padding:0; border-radius:12px; display:grid; place-items:center; position:relative; overflow:hidden}
 #theme::after{
