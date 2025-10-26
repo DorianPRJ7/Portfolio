@@ -22,13 +22,30 @@
     <link rel="mask-icon" href="assets/favicon.svg" color="#0ea5e9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tu peux garder tel quel ou passer au preload-only selon ton choix précédent -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap"></noscript>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<?php include 'assets/icons.svg'; ?>
+
+<!-- === SPRITE ICONS INLINE (remplace l'include PHP) === -->
+<!-- assets/icons.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- LinkedIn (Bootstrap Icons) -->
+    <!-- Remarque : LinkedIn a été retiré de Simple Icons en 2024 ; on utilise la version Bootstrap Icons, largement répandue. -->
+    <symbol id="icon-linkedin" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </symbol>
+
+    <!-- GitHub (Simple Icons path) -->
+    <!-- Source du tracé : Simple Icons (extrait cité dans l’article DEV) -->
+    <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </symbol>
+</svg>
+<!-- === /SPRITE ICONS INLINE === -->
 
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="glow" aria-hidden="true"></div>
@@ -36,9 +53,9 @@
 <header>
     <div class="wrap nav">
         <div class="brand">
-            <a href="index.php"><div class="logo">DP</div></a>
+            <a href="index.html"><div class="logo">DP</div></a>
             <div>
-                <a href="index.php">
+                <a href="index.html">
                     <strong>Dorian PAREJA</strong><br/>
                     <small>Portfolio</small>
                 </a>
@@ -107,8 +124,8 @@
                     <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span><span class="pill">A*</span>
                     <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
                     <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
-                    <span class="pill">Git</span><span class="pill">Eclipse</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
-                    <span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">PhpStorm</span><span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span>
+                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">MySQL</span><span class="pill">SQLite</span><span class="pill">Scripts</span>
+                    <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
                 </div>
                 <div class="marquee-track" aria-hidden="true">
                     <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">JavaScript</span>
@@ -119,8 +136,8 @@
                     <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span><span class="pill">A*</span>
                     <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
                     <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
-                    <span class="pill">Git</span><span class="pill">Eclipse</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
-                    <span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">PhpStorm</span><span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span>
+                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">MySQL</span><span class="pill">SQLite</span><span class="pill">Scripts</span>
+                    <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
                 </div>
             </div>
         </div>
