@@ -80,8 +80,8 @@ function projectCardTemplate(p, idx) {
       <div class="tags">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
       <p style="margin:10px 0 0">${p.description}</p>
       <div class="actions">
-        <div class="links">${linksHtml}</div>
         ${thumb}
+        <div class="links">${linksHtml}</div>
       </div>
 
       <div class="details" id="details-${idx}">
@@ -159,3 +159,41 @@ if (document.fonts && document.fonts.ready) {
 setTimeout(() => {
     document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
 }, 1200);
+
+/* ===== Mobile nav toggle (AJOUT) ===== */
+const navToggle = document.getElementById('navToggle');
+const html = document.documentElement;
+const primaryNav = document.getElementById('primary-nav');
+
+// N’affiche le bouton que si JS est dispo
+if (navToggle) navToggle.hidden = false;
+
+function closeNav(){
+    html.classList.remove('nav-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+}
+function openNav(){
+    html.classList.add('nav-open');
+    navToggle?.setAttribute('aria-expanded', 'true');
+}
+
+navToggle?.addEventListener('click', () => {
+    const isOpen = html.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+// Ferme sur clic d’un lien, ou Échap
+primaryNav?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeNav);
+});
+addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+});
+
+// Ferme si clic en dehors du panneau
+addEventListener('click', (e) => {
+    if (!html.classList.contains('nav-open')) return;
+    const inNav = primaryNav?.contains(e.target);
+    const onToggle = navToggle?.contains(e.target);
+    if (!inNav && !onToggle) closeNav();
+});

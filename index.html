@@ -3,92 +3,314 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Portfolio - Dorian Pareja</title>
+    <title>Portfolio - Maintenance - Dorian PAREJA</title>
     <meta name="description" content="Le portfolio de Dorian Pareja est actuellement en cours de refonte." />
+    <meta name="theme-color" content="#0d0f14" />
 
+    <!-- Icône & polices -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles principaux -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Styles spécifiques maintenance -->
     <style>
-        :root {
-            --bg: #0d0f14;
-            --text: #e6e9ef;
-            --muted: #9aa3b2;
-            --accent: #59f9ff;
-            --accent-2: #7b6cff;
+        /* ===== Styles spécifiques maintenance (remplacer intégralement) ===== */
+        .maintenance {
+            min-height: calc(100dvh - var(--header-h) - var(--safe-top));
+            display: grid;
+            place-items: center;
+            padding: 26px 0;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .maintenance .card {
+            max-width: 860px;
+            width: min(94vw, 860px);
+            border-radius: 22px;
+            background: var(--panel);
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: var(--shadow);
+            padding: 28px;
             text-align: center;
-            padding: 2rem;
+        }
+        html[data-theme="light"] .maintenance .card {
+            border-color: rgba(10,13,20,.10);
         }
 
-        h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            font-weight: 600;
+        .maintenance h1 {
+            margin: 0 0 8px;
+            font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+            letter-spacing: -.02em;
         }
-
-        p {
+        .maintenance h1 .accent-ink {
+            background: linear-gradient(90deg, var(--accent-ink-start), var(--accent-ink-end));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            text-shadow: 0 0 30px color-mix(in oklab, var(--accent-ink-glow) 22%, transparent);
+        }
+        .maintenance p.lead {
             color: var(--muted);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            margin: 6px 0 18px;
         }
 
-        .loader-container {
-            display: flex;
-            justify-content: center;
-        }
-
+        /* Loader */
+        .loader-wrap { display: grid; place-items: center; padding: 12px 0 10px; }
         .loader {
-            width: 48px;
-            height: 48px;
-            border: 3px solid var(--muted);
+            width: 48px; height: 48px; border-radius: 50%;
+            border: 3px solid color-mix(in oklab, var(--text) 20%, transparent);
             border-top-color: var(--accent);
-            border-radius: 50%;
             animation: spin 1.2s linear infinite;
-            margin: 0 auto;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Boutons d’action sous le loader */
+        .actions {
+            display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+            margin-top: 18px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        /* ===== Panneaux “Contacts” et “Réseaux” ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;            /* + espace entre colonnes */
+            margin-top: 22px;     /* + espace au-dessus des panneaux */
+            text-align: left;
+        }
+        @media (max-width: 720px){
+            .info-grid { grid-template-columns: 1fr; }
         }
 
-        footer {
-            position: absolute;
-            bottom: 1rem;
-            font-size: 0.9rem;
+        .panel-mini {
+            border: 1px solid rgba(255,255,255,.08);
+            background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
+            border-radius: 16px;
+            padding: 16px 16px 18px;
+        }
+        html[data-theme="light"] .panel-mini {
+            border-color: rgba(10,13,20,.10);
+            background: rgba(0,0,0,.03);
+        }
+
+        /* Ligne de titre (dot + h3) */
+        .mini-title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 12px;   /* espace entre le titre et le contenu du panneau */
+        }
+        .panel-mini h3{
+            margin: 0;
+            font-size: 1rem;
+            letter-spacing: .2px;
+        }
+        .mini-title .dot{
+            width: 9px; height: 9px; border-radius: 50%;
+            background: radial-gradient(100% 100% at 30% 30%, #fff, var(--accent-2));
+            box-shadow: 0 0 18px var(--accent-2);
+            flex: 0 0 auto;
+        }
+
+        /* Liste contacts compacte */
+        .contact-mini { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+        .contact-mini li { display: grid; grid-template-columns: max-content 1fr; gap: 12px; align-items: center; }
+        .contact-mini strong { color: var(--muted); }
+
+        .contact-mini a{
+            display:inline-block; width:max-content;
+            text-decoration: underline dashed;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+            text-decoration-color: color-mix(in oklab, var(--accent) 30%, transparent);
+        }
+        .contact-mini a:hover{ text-decoration-color: var(--accent); }
+        .contact-mini a:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; }
+
+        /* Réseaux : on réutilise a.social du site ; juste le conteneur */
+        .socials { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        /* Footer identique au portfolio */
+        footer.wrap p { color: var(--muted); text-align: right; }
+
+        /* Désactivation d’un bouton lien (pour CV indisponible) */
+        .btn[disabled],
+        .btn[aria-disabled="true"]{
+            opacity:.55;
+            cursor:not-allowed;
             color: var(--muted);
+            /*font-style: italic;*/
+            font-weight: bold;
+            transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+        }
+
+        /* Neutralise le hover par défaut de .btn:hover */
+        .btn[disabled]:hover, .btn[aria-disabled="true"]:hover,
+        .btn[disabled]:focus-visible, .btn[aria-disabled="true"]:focus-visible{
+            transform:translateY(-2px);
+            border-color:color-mix(in oklab,var(--accent) 35%,transparent);
+            box-shadow:var(--shadow),0 8px 22px -12px color-mix(in oklab,var(--accent) 40%,transparent);
         }
     </style>
 </head>
 <body>
-<main>
-    <h1>Portfolio en cours de refonte</h1>
-    <p>Une nouvelle version arrive bientôt...</p>
-    <div class="loader-container">
-        <div class="loader"></div>
+
+<!-- Sprite d’icônes (LinkedIn / GitHub) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-linkedin" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </symbol>
+</svg>
+
+<!-- Fond & lueur -->
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<header>
+    <div class="wrap nav">
+        <div class="brand">
+            <a href="index.html"><div class="logo">DP</div></a>
+            <div>
+                <a href="index.html">
+                    <strong>Dorian PAREJA</strong><br/>
+                    <small>Portfolio</small>
+                </a>
+            </div>
+        </div>
+
+        <button id="navToggle" class="btn btn-ghost burger" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu" hidden>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <nav id="primary-nav" class="nav-links">
+            <button type="button" class="btn btn-ghost" disabled aria-disabled="true" title="CV indisponible pour le moment">
+                CV (PDF)<em>Indisponible</em>
+            </button>
+            <button id="theme" class="btn btn-ghost" aria-label="Basculer le thème"></button>
+        </nav>
     </div>
+</header>
+
+<main id="main" class="wrap">
+    <section id="info" class="maintenance reveal in">
+        <div class="card">
+            <h1><span class="accent-ink">Portfolio en maintenance</span></h1>
+            <p class="lead">Une nouvelle version arrive bientôt. Je finalise la refonte pour une expérience plus claire, rapide et accessible.</p>
+
+            <div class="loader-wrap">
+                <div class="loader" role="status" aria-label="Chargement en cours"></div>
+            </div>
+
+            <!-- Infos rapides : contacts + réseaux -->
+            <div class="info-grid">
+                <!-- Panel “Me contacter” -->
+                <div class="panel-mini">
+                    <div class="mini-title">
+                        <span class="dot" aria-hidden="true"></span>
+                        <h3>Me contacter</h3>
+                    </div>
+                    <ul class="contact-mini">
+                        <li><strong>Mail pro&nbsp;:</strong> <a href="mailto:dorian.pareja.pro@gmail.com">dorian.pareja.pro@gmail.com</a></li>
+                        <li><strong>Mail UL&nbsp;:</strong> <a href="mailto:dorian.pareja9@etu.univ-lorraine.fr">dorian.pareja9@etu.univ-lorraine.fr</a></li>
+                        <li><strong>Tél&nbsp;:</strong> <a href="tel:+33615822794">+33&nbsp;6&nbsp;15&nbsp;82&nbsp;27&nbsp;94</a></li>
+                    </ul>
+                </div>
+
+                <!-- Panel “Mes réseaux” -->
+                <div class="panel-mini">
+                    <div class="mini-title">
+                        <span class="dot" aria-hidden="true"></span>
+                        <h3>Mes réseaux</h3>
+                    </div>
+                    <div class="socials">
+                        <a class="social" target="_blank" href="https://www.linkedin.com/in/pareja-dorian/" aria-label="LinkedIn" rel="noreferrer">
+                            <svg width="30" height="30" role="img" viewBox="0 0 16 16" fill="currentColor">
+                                <use href="#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                        <a class="social" target="_blank" href="https://github.com/DorianPRJ7" aria-label="GitHub" rel="noreferrer">
+                            <svg width="30" height="30" role="img" viewBox="0 0 24 24" fill="currentColor">
+                                <use href="#icon-github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Infos rapides -->
+        </div>
+    </section>
 </main>
 
-<footer>&copy; 2025 Dorian Pareja</footer>
+<!-- Footer identique au portfolio -->
+<footer class="wrap">
+    <p>Portfolio en Maintenance&nbsp;-&nbsp;<span id="year"></span>&nbsp;Dorian PAREJA&nbsp;&copy;&nbsp;-&nbsp;Tous droits réservés.</p>
+</footer>
+
+<!-- JS -->
+<script type="module">
+    import { initParticles } from './assets/anims/particles.js';
+    import { initStickyHeader } from './assets/header.js';
+
+    // Année
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Thème
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    function applyTheme(mode){
+        document.documentElement.setAttribute('data-theme', mode);
+        localStorage.setItem('theme', mode);
+        themeMeta?.setAttribute('content', mode === 'light' ? '#f6f7fb' : '#0d0f14');
+    }
+    (function initTheme(){
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark'){
+            applyTheme(saved);
+        } else {
+            const prefersLight = matchMedia('(prefers-color-scheme: light)').matches;
+            applyTheme(prefersLight ? 'light' : 'dark');
+        }
+    })();
+    const themeBtn = document.getElementById('theme');
+    themeBtn?.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = (cur === 'dark') ? 'light' : 'dark';
+        applyTheme(next);
+        themeBtn.animate([{transform:'scale(1)'},{transform:'scale(0.96)'},{transform:'scale(1)'}], {duration:140, easing:'ease-out'});
+    });
+
+    // Fond animé + glow
+    initParticles(document.getElementById('bg'));
+    window.addEventListener('pointermove', (e) => {
+        document.documentElement.style.setProperty('--gx', (e.clientX/window.innerWidth*100)+"%");
+        document.documentElement.style.setProperty('--gy', (e.clientY/window.innerHeight*100)+"%");
+    });
+
+    // Header sticky + menu mobile
+    initStickyHeader();
+    const navToggle = document.getElementById('navToggle');
+    const html = document.documentElement;
+    const primaryNav = document.getElementById('primary-nav');
+    if (navToggle) navToggle.hidden = false;
+
+    function closeNav(){ html.classList.remove('nav-open'); navToggle?.setAttribute('aria-expanded','false'); }
+    navToggle?.addEventListener('click', () => {
+        const isOpen = html.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    primaryNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+    addEventListener('click', e => {
+        if (!html.classList.contains('nav-open')) return;
+        const inNav = primaryNav?.contains(e.target);
+        const onToggle = navToggle?.contains(e.target);
+        if (!inNav && !onToggle) closeNav();
+    });
+</script>
 </body>
 </html>
