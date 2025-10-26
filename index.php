@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Portfolio - Dorian Pareja</title>
+    <meta name="description" content="Portfolio de Dorian Pareja — L3 Informatique, projets, expériences, compétences et contact." />
+    <meta name="theme-color" content="#0d0f14" />
+
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:title" content="Dorian Pareja — Portfolio" />
+    <meta property="og:description" content="Projets, compétences, parcours et contact. Étudiant L3 Info — recherche de stage à partir d’avril 2026." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="resources/og-image.jpg" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dorian Pareja — Portfolio" />
+    <meta name="twitter:description" content="Projets, compétences, parcours et contact." />
+    <meta name="twitter:image" content="resources/og-image.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="mask-icon" href="assets/favicon.svg" color="#0ea5e9">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<?php include 'assets/icons.svg'; ?>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<header>
+    <div class="wrap nav">
+        <div class="brand">
+            <a href="index.php"><div class="logo">DP</div></a>
+            <div>
+                <a href="index.php">
+                    <strong>Dorian PAREJA</strong><br/>
+                    <small>Portfolio</small>
+                </a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a class="btn btn-ghost" href="#hero">Accueil</a>
+            <a class="btn btn-ghost" href="#works">Projets</a>
+            <a class="btn btn-ghost" href="#about">Parcours</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+            <button id="theme" class="btn btn-ghost" aria-label="Basculer le thème"></button>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="wrap">
+    <!-- HERO -->
+    <section id="hero" class="reveal">
+        <div class="hero-inner">
+            <div>
+                <h1 class="title">
+                    Salut,&nbsp;moi c&apos;est <span class="accent">Dorian PAREJA</span>.<br/>
+                    J&apos;aime développer des applications web et des interfaces claires, performantes et accessibles.
+                </h1>
+                <p class="subtitle">
+                    Étudiant en L3 Informatique (bac+3) à l&apos;Université de Lorraine, je recherche un <strong>stage</strong> de <strong>8&nbsp;semaines minimum</strong> à partir d&apos;<strong>avril&nbsp;2026</strong>.<br/>
+                    Intéressé par le <strong>développement web</strong> (front/back) et les <strong>IHM</strong>, je souhaite contribuer à des projets concrets tout en mettant en pratique ce que j&apos;ai appris (PHP, JavaScript, HTML5/CSS, Java, JavaFX) et en continuant à progresser et apprendre dans ces domaines.<br/>
+                    Mon objectif à moyen terme est de poursuivre en <strong>Master (bac+5)</strong> après la L3 pour approfondir ces domaines.
+                </p>
+                <div class="hero-cta">
+                    <a class="btn" href="#works">Voir les projets</a>
+                    <a class="btn" href="#about">Voir le parcours</a>
+                    <a class="btn" href="#contact">Me contacter</a>
+                    <a class="btn" href="resources/CV_Dorian_Pareja.pdf" download>CV&nbsp;(PDF)</a>
+                </div>
+            </div>
+
+            <div class="tilt">
+                <div class="card" id="tiltCard">
+                    <h3 style="margin-top:0">En ce moment&nbsp;:</h3>
+                    <p class="card-tilde-content">
+                        <a href="#works">
+                            Développement d&apos;une application web de gestion de <strong>cocktails</strong> (recettes,&nbsp;ingrédients,&nbsp;favoris,&nbsp;...) avec sauvegarde de <strong>données utilisateurs</strong> (comptes,&nbsp;favoris,&nbsp;...) dans le cadre du module «&nbsp;Conception d&apos;Applications Web&nbsp;» en L3-Informatique à l&apos;Université de Lorraine.
+                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#html5 #php #javascript</span>
+                        </a>
+                    </p>
+                    <p class="card-tilde-content-last">
+                        <a href="#works">
+                            Conception d&apos;une base de données et de sa gestion dans le cadre du module «&nbsp;Conception et Modélisation de BDD&nbsp;» en L3-Informatique à l&apos;Université de Lorraine.
+                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#MCD/MLD #normalisation #SQL #PL-SQL</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MARQUEE ===== -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-viewport">
+                <div class="marquee-track">
+                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">JavaScript</span>
+                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Bases de données</span><span class="pill">MCD/MLD</span>
+                    <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
+                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span>
+                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">Heuristiques</span>
+                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span><span class="pill">A*</span>
+                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
+                    <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
+                    <span class="pill">Git</span><span class="pill">Eclipse</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
+                    <span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">PhpStorm</span><span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">JavaScript</span>
+                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Bases de données</span><span class="pill">MCD/MLD</span>
+                    <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
+                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span>
+                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">Heuristiques</span>
+                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span><span class="pill">A*</span>
+                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
+                    <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
+                    <span class="pill">Git</span><span class="pill">Eclipse</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
+                    <span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">PhpStorm</span><span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="reveal">
+        <div class="section-title"><span class="dot"></span><h2 style="margin:0">Projets</h2></div>
+        <div class="rail" id="rail"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+        <div class="section-title"><span class="dot"></span><h2 style="margin:0">Parcours</h2></div>
+        <div class="panel">
+            <p><strong>Licence 3 Informatique</strong> - Université de Lorraine (2025 - en cours)<br/><span style="color:var(--muted)">PHP,&nbsp;JavaScript,&nbsp;C++/POO,&nbsp;BDD,&nbsp;PL-SQL,&nbsp;Réseaux,&nbsp;Commandes réseau</span></p>
+            <p><strong>Licence 2 Informatique</strong> - Université de Lorraine (2024 - 2025)<br/><span style="color:var(--muted)">Java/POO,&nbsp;IHM/JavaFX,&nbsp;Algorithmique,&nbsp;Récursivité,&nbsp;complexité&nbsp;en&nbsp;temps,&nbsp;Graphes,&nbsp;IA,&nbsp;Réseaux,&nbsp;Systèmes,<br />UNO&nbsp;(Java),&nbsp;ChessQuitto&nbsp;(IA&nbsp;Python),&nbsp;Pendu&nbsp;(JavaFX),&nbsp;Bentley-Ottmann&nbsp;(C)</span></p>
+            <p><strong>Licence 1 Informatique</strong> - Université de Lorraine (2023 - 2024)<br/><span style="color:var(--muted)">C,&nbsp;Gestion de la mémoire,&nbsp;Pointeurs,&nbsp;Algorithmique,&nbsp;HTML5/CSS,&nbsp;Bases PHP</span></p>
+            <p><strong>Baccalauréat général Spécialités Mathématiques et Informatique (NSI)</strong> - Lycée Charles Jully Saint-Avold (2021 - 2022)<br/><span style="color:var(--muted)">Algorithmique,&nbsp;Python,&nbsp;HTML4/CSS,&nbsp;SQL,&nbsp;bases de POO</span></p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+        <div class="section-title">
+            <span class="dot"></span><h2 style="margin:0">Contact</h2>
+        </div>
+        <div class="panel">
+            <p>
+                Je suis actuellement à la recherche d’un <strong>stage de fin de Licence 3 en Informatique</strong>, à partir d’<strong>avril 2026</strong>,
+                dans le domaine du <strong>développement</strong> (Web, IHM, Logiciel). Curieux, rigoureux et motivé, je souhaite rejoindre une équipe qui
+                me permettra de mettre en pratique mes compétences tout en continuant à progresser. N’hésitez pas à me contacter si mon profil correspond
+                à vos besoins, ou simplement pour échanger.
+            </p>
+
+            <!-- Contact + Réseaux -->
+            <div class="contact-blocks">
+                <!-- Colonne : infos -->
+                <div class="contact-col">
+                    <h3>Mes informations de contact :</h3>
+                    <ul class="contact-list">
+                        <li><strong>Mail pro&nbsp;:</strong> <a href="mailto:dorian.pareja.pro@gmail.com">dorian.pareja.pro@gmail.com</a></li>
+                        <li><strong>Mail universitaire&nbsp;:</strong> <a href="mailto:dorian.pareja9@etu.univ-lorraine.fr">dorian.pareja9@etu.univ-lorraine.fr</a></li>
+                        <li><strong>Tel&nbsp;:</strong> <a href="tel:+33615822794">+33&nbsp;6&nbsp;15&nbsp;82&nbsp;27&nbsp;94</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne : réseaux -->
+                <div class="contact-col">
+                    <h3>Mes réseaux :</h3>
+                    <div class="socials">
+                        <a class="social" target="_blank" href="https://www.linkedin.com/in/pareja-dorian/" aria-label="LinkedIn">
+                            <svg width="30" height="30" role="img" viewBox="0 0 16 16" fill="currentColor">
+                                <use href="#icon-linkedin"></use>
+                            </svg>
+                        </a>
+
+                        <a class="social" target="_blank" href="https://github.com/DorianPRJ7" aria-label="GitHub">
+                            <svg width="30" height="30" role="img" viewBox="0 0 24 24" fill="currentColor">
+                                <use href="#icon-github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Contact + Réseaux -->
+        </div>
+    </section>
+</main>
+
+<footer class="wrap">
+    <p style="color:var(--muted); text-align: right">Portfolio - <span id="year"></span> Dorian PAREJA ©</p>
+</footer>
+
+<!-- JS modules -->
+<script type="module" src="assets/anims/intro.js"></script>
+<script type="module" src="assets/main.js"></script>
+</body>
+</html>
