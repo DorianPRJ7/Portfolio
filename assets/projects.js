@@ -12,7 +12,7 @@ export const PROJECTS = [
             "Projet réalisé en trinôme, centré sur la mise en pratique des notions de POO, de réseau et de bases de données, ainsi que sur la qualité du code (lisibilité, extensibilité, réutilisabilité) et la collaboration.",
         links: [
             { label: "Lire", href: "#" },
-            { label: "Voir", href: "https://www.linkedin.com/in/pareja-dorian/details/projects/" }
+            { label: "Voir", href: "https://github.com/DorianPRJ7/Jeu-du-Uno-PS4" }
         ],
         img: "resources/projects/uno.png"
     },
@@ -29,7 +29,7 @@ export const PROJECTS = [
             "Réalisé en trinôme, ce projet a permis de consolider la maîtrise de JavaFX et d’approfondir la conception d’interfaces centrées utilisateur, tout en appliquant une démarche d’ingénierie logicielle complète.",
         links: [
             { label: "Lire", href: "#" },
-            { label: "Voir", href: "https://www.linkedin.com/in/pareja-dorian/details/projects/" }
+            { label: "Voir", href: "https://github.com/DorianPRJ7/Jeu-du-Pendu-PS4" }
         ],
         img: "resources/projects/pendu.png"
     },
@@ -46,7 +46,7 @@ export const PROJECTS = [
             "Projet réalisé en trinôme, alliant rigueur algorithmique, analyse des heuristiques de jeu et application concrète des algorithmes étudiés en cours.\n",
         links: [
             { label: "Lire", href: "#" },
-            { label: "Voir", href: "https://www.linkedin.com/in/pareja-dorian/details/projects/" }
+            { label: "Voir", href: "https://github.com/DorianPRJ7/IA-ChessQuitto" }
         ],
         img: ""
     },
@@ -65,7 +65,7 @@ export const PROJECTS = [
             "Réalisé en binôme, ce projet a également permis une initiation à Git et un approfondissement des connaissances acquises depuis le début de la Licence Informatique, avec un accent particulier sur la rigueur algorithmique, la gestion mémoire, la qualité du code et l’analyse expérimentale des performances.",
         links: [
             { label: "Lire", href: "#" },
-            { label: "Voir", href: "https://www.linkedin.com/in/pareja-dorian/details/projects/" }
+            { label: "Voir", href: "https://github.com/DorianPRJ7/Bentley-Ottmann-PS3" }
         ],
         img: ""
     }

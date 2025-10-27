@@ -28,6 +28,7 @@
         .maintenance .card {
             max-width: 860px;
             width: min(94vw, 860px);
+            min-width: 0;
             border-radius: 22px;
             background: var(--panel);
             border: 1px solid rgba(255,255,255,.08);
@@ -74,13 +75,14 @@
         /* ===== Panneaux “Contacts” et “Réseaux” ===== */
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;            /* + espace entre colonnes */
-            margin-top: 22px;     /* + espace au-dessus des panneaux */
+            grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+            gap: 22px;
+            margin-top: 22px;
             text-align: left;
         }
         @media (max-width: 720px){
-            .info-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; gap: 16px; }
+            .panel-mini { padding: 14px; }
         }
 
         .panel-mini {
@@ -88,6 +90,7 @@
             background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
             border-radius: 16px;
             padding: 16px 16px 18px;
+            min-width: 0;
         }
         html[data-theme="light"] .panel-mini {
             border-color: rgba(10,13,20,.10);
@@ -115,11 +118,15 @@
 
         /* Liste contacts compacte */
         .contact-mini { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-        .contact-mini li { display: grid; grid-template-columns: max-content 1fr; gap: 12px; align-items: center; }
+        .contact-mini li { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: 12px; align-items: center; min-width: 0; }
         .contact-mini strong { color: var(--muted); }
 
         .contact-mini a{
-            display:inline-block; width:max-content;
+            display:inline;
+            width:auto;
+            overflow-wrap:anywhere;
+            word-break: break-word;
+            white-space: normal;
             text-decoration: underline dashed;
             text-decoration-thickness: 1px;
             text-underline-offset: 4px;
@@ -128,8 +135,18 @@
         .contact-mini a:hover{ text-decoration-color: var(--accent); }
         .contact-mini a:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; }
 
+        /* Empêche le débordement des longues adresses mail / numéros en mobile */
+        .contact-mini strong{ white-space: nowrap; }
+
+        /* Les panneaux doivent pouvoir rétrécir dans la grille */
+        .panel-mini{ min-width: 0; overflow: hidden; }
+
+        /* Sécurité : évite que des enfants forcent la largeur */
+        .socials{ min-width: 0; }
+
         /* Réseaux : on réutilise a.social du site ; juste le conteneur */
         .socials { display: flex; flex-wrap: wrap; gap: 12px; }
+        .socials { min-width: 0; }
 
         /* Footer identique au portfolio */
         footer.wrap p { color: var(--muted); text-align: right; }
@@ -190,7 +207,7 @@
 
         <nav id="primary-nav" class="nav-links">
             <button type="button" class="btn btn-ghost" disabled aria-disabled="true" title="CV indisponible pour le moment">
-                CV (PDF)<em>Indisponible</em>
+                CV (PDF)<em>En refonte...</em>
             </button>
             <button id="theme" class="btn btn-ghost" aria-label="Basculer le thème"></button>
         </nav>
@@ -217,7 +234,7 @@
                     </div>
                     <ul class="contact-mini">
                         <li><strong>Mail pro&nbsp;:</strong> <a href="mailto:dorian.pareja.pro@gmail.com">dorian.pareja.pro@gmail.com</a></li>
-                        <li><strong>Mail UL&nbsp;:</strong> <a href="mailto:dorian.pareja9@etu.univ-lorraine.fr">dorian.pareja9@etu.univ-lorraine.fr</a></li>
+                        <li><strong>Mail UL&nbsp;:</strong> <a href="mailto:dorian.pareja9@etu.univ-lorraine.fr">pareja4u@etu.univ-lorraine.fr</a></li>
                         <li><strong>Tél&nbsp;:</strong> <a href="tel:+33615822794">+33&nbsp;6&nbsp;15&nbsp;82&nbsp;27&nbsp;94</a></li>
                     </ul>
                 </div>
