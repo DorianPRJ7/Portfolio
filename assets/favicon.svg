@@ -1,52 +1,43 @@
 <!-- assets/favicon.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-    <style>
-        :root{ --r:12 }               /* arrondi proche de .logo */
-        .light{ display:none }
-        @media (prefers-color-scheme: light){
-        .dark{ display:none }
-        .light{ display:inline }
-        }
-        .txt{
-        font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-        font-weight:700;
-        font-size: 16px;
-        letter-spacing: .02em;
-        dominant-baseline: middle;
-        text-anchor: middle;
-        }
-    </style>
-
-    <!-- ============ DARK (site sombre) ============ -->
-    <defs class="dark">
-        <!-- dégradé radial comme .logo (accent en haut) -->
-        <radialGradient id="gDark" cx="50%" cy="0%" r="100%">
-            <stop offset="0" stop-color="#59F9FF"/>
-            <stop offset="1" stop-color="rgba(255,255,255,0.15)"/>
-        </radialGradient>
-    </defs>
-    <g class="dark">
-        <!-- fond -->
-        <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#gDark)"/>
-        <!-- liseré subtil (équiv. box-shadow/border) -->
-        <rect x="3" y="3" width="42" height="42" rx="12" fill="none" stroke="rgba(255,255,255,.08)"/>
-        <!-- highlight doux en haut -->
-        <ellipse cx="24" cy="10" rx="14" ry="6" fill="rgba(255,255,255,.12)"/>
-        <!-- lettres -->
-        <text class="txt" x="24" y="26" fill="#E6E9EF">DP</text>
-    </g>
-
-    <!-- ============ LIGHT (site clair) ============ -->
-    <defs class="light">
-        <radialGradient id="gLight" cx="50%" cy="0%" r="100%">
-            <stop offset="0" stop-color="#0EA5E9"/>
-            <stop offset="1" stop-color="rgba(0,0,0,0.06)"/>
-        </radialGradient>
-    </defs>
-    <g class="light">
-        <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#gLight)"/>
-        <rect x="3" y="3" width="42" height="42" rx="12" fill="none" stroke="rgba(10,13,20,.10)"/>
-        <ellipse cx="24" cy="10" rx="14" ry="6" fill="rgba(0,0,0,.08)"/>
-        <text class="txt" x="24" y="26" fill="#0B0E14">DP</text>
-    </g>
+  <style>
+    :root{ --r:12 }
+    .dark{ display:none }
+    @media (prefers-color-scheme: dark){
+      .light{ display:none }
+      .dark{ display:inline }
+    }
+    .txt{
+      font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:700;
+      font-size: 16px;
+      letter-spacing: .02em;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+  </style>
+  <defs class="light">
+    <radialGradient id="gLight" cx="50%" cy="0%" r="100%">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="rgba(0,0,0,0.06)"/>
+    </radialGradient>
+  </defs>
+  <g class="light">
+    <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#gLight)"/>
+    <rect x="3" y="3" width="42" height="42" rx="12" fill="none" stroke="rgba(10,13,20,.10)"/>
+    <ellipse cx="24" cy="10" rx="14" ry="6" fill="rgba(0,0,0,.08)"/>
+    <text class="txt" x="24" y="26" fill="#0B0E14">DP</text>
+  </g>
+  <defs class="dark">
+    <radialGradient id="gDark" cx="50%" cy="0%" r="100%">
+      <stop offset="0" stop-color="#59F9FF"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.15)"/>
+    </radialGradient>
+  </defs>
+  <g class="dark">
+    <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#gDark)"/>
+    <rect x="3" y="3" width="42" height="42" rx="12" fill="none" stroke="rgba(255,255,255,.08)"/>
+    <ellipse cx="24" cy="10" rx="14" ry="6" fill="rgba(255,255,255,.12)"/>
+    <text class="txt" x="24" y="26" fill="#E6E9EF">DP</text>
+  </g>
 </svg>
