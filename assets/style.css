@@ -131,7 +131,12 @@ html[data-theme="dark"] .btn-ghost:hover{background:rgba(255,255,255,.06); borde
 }
 
 /* =================== Hero =================== */
-#hero{position:relative; isolation:isolate; overflow:hidden}
+#hero{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    padding-bottom: 20px;
+}
 #bg{
     position:fixed; inset:0; z-index:-2;
     background:
@@ -140,18 +145,27 @@ html[data-theme="dark"] .btn-ghost:hover{background:rgba(255,255,255,.06); borde
             var(--bg);
 }
 .glow{position:absolute; inset:-10%; z-index:-1; background:radial-gradient(600px 600px at var(--gx,50%) var(--gy,20%), color-mix(in oklab,var(--accent) 13%,transparent), transparent 60%)}
-.hero-inner{display:grid; grid-template-columns:1.3fr .7fr; gap:40px; padding:60px 0 40px}
+.hero-inner{
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 40px;
+    padding: 20px 0;
+    align-items: center;
+}
 @media (max-width: 980px){
     .hero-inner{grid-template-columns:1fr; gap:28px}
     .tilt{order:2}
 }
-.title{font-size:clamp(1.5rem,3vw,3rem); line-height:1.05; letter-spacing:-.02em; margin-top:0}
+.title{font-size:clamp(2.6rem,4vw,4rem); line-height:1.05; letter-spacing:-0.02em; margin-top:0;}
 .title .accent{
     background:linear-gradient(90deg, var(--accent-ink-start), var(--accent-ink-end));
     -webkit-background-clip:text; background-clip:text; color:transparent;
     text-shadow:0 0 30px color-mix(in oklab,var(--accent-ink-glow) 22%,transparent);
 }
-.subtitle{color:var(--muted); font-size:1.1rem; margin-top:14px}
+.subtitle{
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    margin-top: 8px;
+}
 .hero-cta{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
 
 /* Tilt card */
@@ -252,61 +266,85 @@ html[data-theme="light"] button.link {
 
 /* Contraste clair des panels/links/tags */
 html[data-theme="light"] .work,
+html[data-theme="light"] #description .panel,
 html[data-theme="light"] #about .panel,
 html[data-theme="light"] #contact .panel{border-color:rgba(10,13,20,.10)}
 html[data-theme="light"] .link{border-color:rgba(10,13,20,.14); background:linear-gradient(180deg, rgba(0,0,0,.02), transparent)}
 html[data-theme="light"] .tag{border-color:rgba(10,13,20,.14); background:rgba(0,0,0,.02)}
 
-/* Rangée actions: boutons à gauche, vignette à droite */
+/* Ligne actions : image prend 1fr, boutons auto */
 .actions{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:2px;
-    margin-top:16px;
-    flex-wrap:nowrap;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    column-gap: 8px;
+    margin-top: 16px;
 }
 
-.actions .thumb{ order:1; margin-left:0; }
-.actions .links{ order:2; margin-left:auto; flex:0 1 auto; }
+/* En mode grid, pas de flex ici */
+.actions .thumb{
+    order: 0;
+    margin-left: 0;
+}
 
-/* Cadre qui s'adapte à la forme de l'image, avec bornes */
-.thumb{
-    height:100px;
-    max-width:200px;
-    flex:0 0 auto;
+.actions .links{
+    margin-left: 0;
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+    margin-bottom:15px;
+}
 
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:6px;
-    border-radius:16px;
-    overflow:hidden;
+/* L’image occupe toute la largeur de la vignette */
+.thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
     background: var(--card);
-    border:1px solid rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.10);
     box-shadow: var(--shadow);
 }
 
-/* L’image conserve ses proportions et dicte la largeur du cadre */
-.thumb img{
-    height:100%;
-    width:auto;
-    max-width:100%;
-    object-fit:contain;
-    display:block;
-}
-
-html[data-theme="light"] .thumb{
-    border-color: rgba(10,13,20,.12);
-    background: linear-gradient(180deg, rgba(0,0,0,.02), transparent);
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 /* Responsive: en mobile, la vignette passe en dessous et prend la largeur de la carte */
 @media (max-width: 780px){
-    .actions{ flex-direction:column; align-items:flex-start }
-    .actions .thumb{ order:1; width:100%; max-width:none; height:auto; aspect-ratio:16/9; }
-    .actions .links{ order:2; width:100%; display:flex; justify-content:flex-end; gap:8px;}
-    .thumb img{ width:100%; height:100%; object-fit:contain; }
+    .actions{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 8px;
+    }
+
+    .actions .thumb{
+        order: 1;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .actions .links{
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin: 8px 0 0 0;
+    }
+
+    .thumb img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 
@@ -348,7 +386,7 @@ html[data-theme="light"] .details.open{background:linear-gradient(180deg, rgba(0
 
 /* =================== Sections & Footer =================== */
 section{padding:26px 0}
-#about .panel, #contact .panel{border:1px solid rgba(255,255,255,.08); background:var(--panel); border-radius:22px; padding:24px; min-width:0}
+#about .panel, #contact .panel, #description .panel{border:1px solid rgba(255,255,255,.08); background:var(--panel); border-radius:22px; padding:24px; min-width:0}
 .section-title{display:flex; align-items:center; gap:10px; margin:6px 0 6px}
 .section-title .dot{width:9px; height:9px; border-radius:50%; background:radial-gradient(100% 100% at 30% 30%, #fff, var(--accent-2)); box-shadow:0 0 18px var(--accent-2)}
 .reveal{opacity:0; transform:translateY(14px); filter:blur(4px)}

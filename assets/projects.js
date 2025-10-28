@@ -2,9 +2,9 @@
 export const PROJECTS = [
     {
         title: "UNO Multijoueur",
-        subtitle: "Java · JavaFX · Sockets · JDBC",
+        /*subtitle: "Java | JavaFX | Sockets | JDBC",*/
         tags: ["Java", "JavaFX", "Sockets","JDBC"],
-        description: "Client-serveur temps réel : parties, DAO JDBC, scores, reconnections.",
+        description: "Client-serveur, sockets, DAO JDBC. Gestion complète des règles, parties, scores et comptes joueurs avec sauvegarde en base de données.",
         details: "Développement complet du jeu de cartes UNO en Java avec IntelliJ IDEA dans le cadre du projet de synthèse du second semestre de Licence 2 Informatique à l'Université de Lorraine.\n" +
             "L’application repose sur une architecture client-serveur en Java/JavaFX, avec une gestion des parties, joueurs, cartes et règles via un modèle orienté objet clair et modulaire.\n" +
             "Le serveur centralise la logique du jeu, les tours, les effets de cartes et la communication réseau, tandis que le client JavaFX, conçu selon le modèle MVC, propose une interface graphique intuitive pour jouer en multijoueur en ligne.\n" +
@@ -16,11 +16,12 @@ export const PROJECTS = [
         ],
         img: "resources/projects/uno.png"
     },
+
     {
         title: "Jeu du Pendu",
-        subtitle: "JavaFX · FXML · MVC",
+        /*subtitle: "JavaFX | FXML | MVC",*/
         tags: ["Java","JavaFX", "FXML", "MVC"],
-        description: "Interface multi-clients, navigation fluide, gestion scores, parties, etc...",
+        description: "Interface graphique fluide et interactive. Gestion des parties, scores et paramètres de l’interface et des parties sans sauvegarde.",
         details: "Développement d’un jeu du Pendu en Java avec interface graphique JavaFX avec Eclipse IDE 2023-12 sur Windows, réalisé dans le cadre du module Interfaces Graphiques en Licence 2 Informatique à l'Université de Lorraine.\n" +
             "L’objectif du projet était de concevoir une interface répondant simultanément aux besoins de plusieurs clients fictifs, chacun ayant ses propres contraintes fonctionnelles et esthétiques.\n" +
             "L’application a été développée selon une architecture MVC (Modèle-Vue-Contrôleur), avec des vues construites via FXML et SceneBuilder. Elle intègre plusieurs interfaces de jeu, un système de gestion des lettres, du score, des erreurs et de la fin de partie, ainsi qu’une navigation fluide et intuitive entre les écrans (menu, règles, jeu, résultats).\n" +
@@ -33,28 +34,12 @@ export const PROJECTS = [
         ],
         img: "resources/projects/pendu.png"
     },
-    {
-        title: "IA ChessQuitto",
-        subtitle: "Python · MinMax α-β · Heuristiques",
-        tags: ["Python","MinMax α-β", "Heuristiques"],
-        description: "IA pour 3 variantes (Reine-Dame, Reine-Pion, Reine-Roi) avec évaluation dynamique.",
-        details: "Développement d’une Intelligence Artificielle en Python capable de jouer au ChessQuitto, un jeu de stratégie inspiré des échecs et décliné en trois variantes : Reine-Dame, Reine-Pion et Reine-Roi.\n" +
-            "Réalisé dans le cadre du module Introduction à l’Intelligence Artificielle en Licence 2 Informatique à l'Université de Lorraine, ce projet visait à concevoir une IA capable d’analyser le plateau, d’évaluer les positions et de prendre des décisions optimales selon la variante jouée.\n" +
-            "L’IA repose sur un algorithme MinMax avec élagage alpha-bêta, combiné à une évaluation heuristique pondérée et dynamique intégrant la valeur, la position, la mobilité et la sécurité des pièces, ainsi que les notions de menace, de soutien et de contrôle du plateau.\n" +
-            "Trois modules distincts gèrent respectivement la phase de placement, la phase de jeu et l’évaluation contextuelle en fonction du mode sélectionné.\n" +
-            "Afin d’ajuster finement les pondérations heuristiques et la profondeur de recherche, plusieurs matchs IA vs IA ont été menés, permettant d’optimiser la réactivité et la stratégie globale du programme.\n" +
-            "Projet réalisé en trinôme, alliant rigueur algorithmique, analyse des heuristiques de jeu et application concrète des algorithmes étudiés en cours.\n",
-        links: [
-            { label: "Lire", href: "#" },
-            { label: "Voir", href: "https://github.com/DorianPRJ7/IA-ChessQuitto" }
-        ],
-        img: ""
-    },
+
     {
         title: "Bentley–Ottmann",
-        subtitle: "C · Structures · Balayage du plan",
-        tags: ["C","Algorithmes", "Structures", "Gestion mémoire"],
-        description: "Intersections de segments, listes doublement chaînées, ABR, bench.",
+        /*subtitle: "C | Structures | Balayage du plan",*/
+        tags: ["C","Algorithmes", "Structures", "Gestion mémoire", "Scripts"],
+        description: "Intersections de segments, gestion de la mémoire, listes doublement chaînées, ABR et comparaison des algorithmes Glouton et de Bentley-Ottmann.",
         details: "Projet réalisé en C avec CLion dans le cadre du projet de synthèse du premier semestre de Licence 2 Informatique à l'Université de Lorraine.\n" +
             "L’objectif était d’implémenter deux approches permettant de détecter les intersections de segments dans un plan 2D. Un algorithme glouton simple et l’algorithme de Bentley–Ottmann, plus optimisé grâce à la technique du balayage du plan.\n" +
             "Le projet comprend la création complète des structures de données nécessaires (listes doublement chaînées, arbres binaires de recherche, nombres rationnels, points, segments, ...), ainsi que la mise en place de tests unitaires en C pour valider chaque module et algorithme, avec visualisation de certains cas dans GeoGebra.\n" +
@@ -66,6 +51,24 @@ export const PROJECTS = [
         links: [
             { label: "Lire", href: "#" },
             { label: "Voir", href: "https://github.com/DorianPRJ7/Bentley-Ottmann-PS3" }
+        ],
+        img: "resources/projects/bentley-ottmann.png"
+    },
+
+    {
+        title: "IA ChessQuitto",
+        /*subtitle: "Python | MinMax α-β | Heuristiques",*/
+        tags: ["Python","MinMax α-β", "Heuristiques"],
+        description: "IA reposant sur un algorithme MinMax avec élagage α-β pour les 3 variantes du ChessQuitto (Reine, Reine-Pion, Reine-Roi) avec évaluation dynamique.",
+        details: "Développement d’une Intelligence Artificielle en Python capable de jouer au ChessQuitto, un jeu de stratégie inspiré des échecs et décliné en trois variantes : Reine-Dame, Reine-Pion et Reine-Roi.\n" +
+            "Réalisé dans le cadre du module Introduction à l’Intelligence Artificielle en Licence 2 Informatique à l'Université de Lorraine, ce projet visait à concevoir une IA capable d’analyser le plateau, d’évaluer les positions et de prendre des décisions optimales selon la variante jouée.\n" +
+            "L’IA repose sur un algorithme MinMax avec élagage alpha-bêta, combiné à une évaluation heuristique pondérée et dynamique intégrant la valeur, la position, la mobilité et la sécurité des pièces, ainsi que les notions de menace, de soutien et de contrôle du plateau.\n" +
+            "Trois modules distincts gèrent respectivement la phase de placement, la phase de jeu et l’évaluation contextuelle en fonction du mode sélectionné.\n" +
+            "Afin d’ajuster finement les pondérations heuristiques et la profondeur de recherche, plusieurs matchs IA vs IA ont été menés, permettant d’optimiser la réactivité et la stratégie globale du programme.\n" +
+            "Projet réalisé en trinôme, alliant rigueur algorithmique, analyse des heuristiques de jeu et application concrète des algorithmes étudiés en cours.\n",
+        links: [
+            { label: "Lire", href: "#" },
+            { label: "Voir", href: "https://github.com/DorianPRJ7/IA-ChessQuitto" }
         ],
         img: ""
     }
