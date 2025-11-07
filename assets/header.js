@@ -1,4 +1,3 @@
-// assets/header.js
 export function initStickyHeader() {
   const html = document.documentElement;
   const header = document.querySelector('header');
