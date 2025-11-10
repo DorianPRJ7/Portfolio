@@ -1,13 +1,15 @@
 (function(){
-  const url = new URL(location.href);
-  if (url.searchParams.get('nointro') === '1') return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const url = new URL(location.href);
+    if (url.searchParams.get('nointro') === '1') return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const ease = 'cubic-bezier(.2,.8,.2,1)';
-  const short = 520;
+    document.documentElement.classList.add('intro-pending');
 
-  const style = document.createElement('style');
-  style.textContent = `
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const short = 520;
+
+    const style = document.createElement('style');
+    style.textContent = `
     .intro__overlay{
       position:fixed; inset:0; z-index:9999; pointer-events:none;
       display:grid; place-items:center; 
@@ -48,15 +50,24 @@
     .intro__mask{ position:relative; display:grid; place-items:center; padding:30px 24px; }
     .intro__title{
       font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight:700; letter-spacing:-.06em;
-      line-height:.9; text-transform:uppercase; text-align:center; width:100%;
+      font-weight:700; letter-spacing:-.06em; line-height:.9; text-transform:uppercase; text-align:center;
       font-size: clamp(40px, 12vw, 120px);
+      display:inline-block;
+      color: var(--fg, #1f2937);
+      -webkit-text-fill-color: currentColor;
+    }
+    html[data-theme="dark"] .intro__title{
+      color: var(--fg, #e5e7eb);
+    }
+    /* Effet gradient activé UNIQUEMENT quand prêt */
+    html.intro-ready .intro__title{
       background: linear-gradient(90deg, var(--accent, #0ea5e9), #0b3c91);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
+      -webkit-background-clip:text; background-clip:text;
+      color: transparent; -webkit-text-fill-color: transparent;
       text-shadow: 0 0 28px color-mix(in oklab, var(--accent, #0ea5e9) 28%, transparent);
       will-change: transform, letter-spacing, filter, opacity;
     }
-    html[data-theme="dark"] .intro__title{
+    html[data-theme="dark"].intro-ready .intro__title{
       background: linear-gradient(90deg, var(--accent, #59f9ff), #fff);
       text-shadow: 0 0 28px color-mix(in oklab, var(--accent, #59f9ff) 28%, transparent);
     }
@@ -89,37 +100,74 @@
   `;
   document.body.appendChild(overlay);
 
-  const grid = overlay.querySelector('.intro__grid');
-  const ring = overlay.querySelector('.intro__ring');
-  const title = overlay.querySelector('.intro__title');
-  const subtitle = overlay.querySelector('.intro__subtitle');
-  const wipe = overlay.querySelector('.intro__wipe');
+  const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  fontsReady.then(() => {
+    document.documentElement.classList.add('intro-ready');
 
-  const animations = [];
-  animations.push(ring.animate([{transform:'rotate(0deg) scale(1.06)'}, {transform:'rotate(360deg) scale(1.06)'}], {duration:4200, iterations:1, easing:'linear', fill:'both'}));
-  animations.push(title.animate([{opacity:0, filter:'blur(12px)', letterSpacing:'-0.14em', transform:'translateY(8px) scale(.96)'},{opacity:1, filter:'blur(0)', letterSpacing:'-0.02em', transform:'none'}], {duration:820, easing:ease, fill:'both'}));
-  animations.push(subtitle.animate([{opacity:0, transform:'translateY(8px)'},{opacity:.96, transform:'none'}], {duration:short, delay:220, easing:ease, fill:'both'}));
-  animations.push(grid.animate([{opacity:.0},{opacity:.12},{opacity:.0}], {duration:1300, easing:'ease-in-out', fill:'both'}));
-  animations.push(wipe.animate([{transform:'translateY(100%)'},{transform:'translateY(0%)'},{transform:'translateY(100%)'}], {duration:1000, easing:ease, fill:'both', delay:180}));
+    const grid = overlay.querySelector('.intro__grid');
+    const ring = overlay.querySelector('.intro__ring');
+    const title = overlay.querySelector('.intro__title');
+    const subtitle = overlay.querySelector('.intro__subtitle');
+    const wipe = overlay.querySelector('.intro__wipe');
 
-  const logo = document.querySelector('.logo');
-  if (logo) logo.animate([{transform:'translateY(-6px) scale(.94)', opacity:0},{transform:'none', opacity:1}], {duration:short, easing:ease, fill:'both', delay:120});
+    const animations = [];
+    animations.push(ring.animate(
+      [{transform:'rotate(0deg) scale(1.06)'}, {transform:'rotate(360deg) scale(1.06)'}],
+      {duration:4200, iterations:1, easing:'linear', fill:'both'}
+    ));
+    animations.push(title.animate(
+      [{opacity:0, filter:'blur(12px)', letterSpacing:'-0.14em', transform:'translateY(8px) scale(.96)'},
+       {opacity:1, filter:'blur(0)', letterSpacing:'-0.02em', transform:'none'}],
+      {duration:820, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+    ));
+    animations.push(subtitle.animate(
+      [{opacity:0, transform:'translateY(8px)'},{opacity:.96, transform:'none'}],
+      {duration:520, delay:220, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+    ));
+    animations.push(grid.animate(
+      [{opacity:.0},{opacity:.12},{opacity:.0}],
+      {duration:1300, easing:'ease-in-out', fill:'both'}
+    ));
+    animations.push(wipe.animate(
+      [{transform:'translateY(100%)'},{transform:'translateY(0%)'},{transform:'translateY(100%)'}],
+      {duration:1000, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both', delay:180}
+    ));
 
-  const navEls = Array.from(document.querySelectorAll('.nav-links a, #theme'));
-  navEls.forEach((el, i) => {
-    el.animate([{transform:'translateY(-6px)', opacity:0},{transform:'none', opacity:1}], {duration:short, delay:220 + i*60, easing:ease, fill:'both'});
+    const logo = document.querySelector('.logo');
+    if (logo) logo.animate(
+      [{transform:'translateY(-6px) scale(.94)', opacity:0},{transform:'none', opacity:1}],
+      {duration:520, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both', delay:120}
+    );
+    const navEls = Array.from(document.querySelectorAll('.nav-links a, #theme'));
+    navEls.forEach((el, i) => {
+      el.animate(
+        [{transform:'translateY(-6px)', opacity:0},{transform:'none', opacity:1}],
+        {duration:520, delay:220 + i*60, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+      );
+    });
+
+    const titleHero = document.querySelector('#hero .title');
+    const subtitleHero = document.querySelector('#hero .subtitle');
+    const ctas = Array.from(document.querySelectorAll('.hero-cta .btn'));
+    if (titleHero) titleHero.animate(
+      [{letterSpacing:'-0.06em', filter:'blur(6px)', opacity:0},{letterSpacing:'-0.02em', filter:'blur(0)', opacity:1}],
+      {duration:700, delay:280, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+    );
+    if (subtitleHero) subtitleHero.animate(
+      [{transform:'translateY(8px)', opacity:0},{transform:'none', opacity:1}],
+      {duration:520, delay:380, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+    );
+    ctas.forEach((btn, i) => {
+      btn.animate(
+        [{transform:'translateY(6px) scale(.98)', opacity:0},{transform:'none', opacity:1}],
+        {duration:520, delay:430 + i*70, easing:'cubic-bezier(.2,.8,.2,1)', fill:'both'}
+      );
+    });
+
+    const exit = overlay.animate(
+      [{opacity:1},{opacity:0}],
+      {duration:520, delay:680, easing:'ease-out', fill:'forwards'}
+    );
+    exit.addEventListener('finish', () => { overlay.remove(); style.remove(); });
   });
-
-  const titleHero = document.querySelector('#hero .title');
-  const subtitleHero = document.querySelector('#hero .subtitle');
-  const ctas = Array.from(document.querySelectorAll('.hero-cta .btn'));
-
-  if (titleHero) titleHero.animate([{letterSpacing:'-0.06em', filter:'blur(6px)', opacity:0},{letterSpacing:'-0.02em', filter:'blur(0)', opacity:1}], {duration:700, delay:280, easing:ease, fill:'both'});
-  if (subtitleHero) subtitleHero.animate([{transform:'translateY(8px)', opacity:0},{transform:'none', opacity:1}], {duration:short, delay:380, easing:ease, fill:'both'});
-  ctas.forEach((btn, i) => {
-    btn.animate([{transform:'translateY(6px) scale(.98)', opacity:0},{transform:'none', opacity:1}], {duration:short, delay:430 + i*70, easing:ease, fill:'both'});
-  });
-
-  const exit = overlay.animate([{opacity:1},{opacity:0}], {duration:520, delay:680, easing:'ease-out', fill:'forwards'});
-  exit.addEventListener('finish', () => { overlay.remove(); style.remove(); });
 })();
