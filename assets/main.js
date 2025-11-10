@@ -22,8 +22,11 @@ function applyTheme(mode){
   if (saved === 'dark' || saved === 'light'){
     applyTheme(saved);
   } else {
-    const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(prefersDark ? 'dark' : 'light');
+    applyTheme('light');
+    /* Pour obtenir le theme du systeme
+    const prefersLight = matchMedia('(prefers-color-scheme: light)').matches;
+    applyTheme(prefersLight ? 'light' : 'dark');
+    */
   }
 })();
 

@@ -17,6 +17,19 @@
     <meta name="twitter:description" content="Projets, compétences, parcours et contact. Étudiant L3 Info - recherche de stage à partir d’avril 2026." />
     <meta name="twitter:image" content="resources/og-image.jpg" />
 
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');      // 'light' | 'dark' | null
+            const theme = saved || 'light';                   // défaut = light
+            document.documentElement.setAttribute('data-theme', theme);
+            if (!saved) localStorage.setItem('theme', theme); // mémorise le défaut pour la prochaine fois
+
+            // Optionnel : synchroniser la barre d'adresse mobile
+            const metaTC = document.querySelector('meta[name="theme-color"]');
+            if (metaTC) metaTC.setAttribute('content', theme === 'dark' ? '#0d0f14' : '#f6f7fb');
+        })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
