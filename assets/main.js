@@ -58,15 +58,20 @@ const CATEGORY_ORDER = [
 
 function projectCardTemplate(p, idx) {
   const linksHtml = p.links.map(l => {
-      if (l.label.toLowerCase() === 'lire') {
-          return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false">Lire</button>`;
-      }
-      return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer">${l.label}</a>`;
+    if (l.label.toLowerCase() === 'lire') {
+      return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false">Lire</button>`;
+    }
+    return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer">${l.label}</a>`;
   }).join('');
 
   const thumb = p.img
       ? `<figure class="thumb">
-           <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" />
+           <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" class="thumb-img" data-idx="${idx}" />
+           <dialog id="dialogImage-${idx}">
+              <img src="${p.img}" width="500" alt="${p.title}" />
+              <br />
+              <button class="close-dialog">Fermer</button>
+          </dialog>
          </figure>`
       : '';
 
@@ -174,18 +179,31 @@ function renderWorks(typeOfWorks) {
 renderWorks("university");
 renderWorks("personnal");
 
-addEventListener('keydown', (e) => {
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("thumb-img")) {
+    const idx = e.target.dataset.idx;
+    const dialog = document.getElementById(`dialogImage-${idx}`);
+    if (dialog) dialog.showModal();
+  }
+
+  if (e.target.classList.contains("close-dialog")) {
+    const dialog = e.target.closest("dialog");
+    if (dialog) dialog.close();
+  }
+});
+
+/*addEventListener('keydown', (e) => {
   if (!rail) return;
   if (['ArrowRight','k','K'].includes(e.key)) rail.scrollBy({ left: 420, behavior: 'smooth' });
   if (['ArrowLeft','j','J'].includes(e.key)) rail.scrollBy({ left: -420, behavior: 'smooth' });
-});
+});*/
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach(en => {
-      if (en.isIntersecting) {
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-      }
+    if (en.isIntersecting) {
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+    }
   });
 }, { threshold: .15 });
 
@@ -193,7 +211,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 if (document.fonts && document.fonts.ready) {
   document.fonts.ready.then(() => {
-      window.dispatchEvent(new Event('resize'));
+    window.dispatchEvent(new Event('resize'));
   });
 }
 
