@@ -57,7 +57,6 @@
       will-change: transform, letter-spacing, filter, opacity;
     }
     html[data-theme="dark"] .intro__title{
-      /*background: linear-gradient(90deg, var(--accent, #59f9ff), #fff);*/
       text-shadow: 0 0 28px color-mix(in oklab, var(--accent, #59f9ff) 28%, transparent);
     }
     .intro__subtitle{

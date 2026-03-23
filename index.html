@@ -4,27 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Portfolio - Dorian PAREJA</title>
-    <meta name="description" content="Portfolio de Dorian Pareja - L3 Informatique, projets, expériences, compétences et contact." />
+    <meta name="description" content="Portfolio de Dorian Pareja - L3 Informatique, projets, exp&eacute;riences, comp&eacute;tences et contact." />
     <meta name="theme-color" content="#f6f7fb" />
 
     <meta property="og:title" content="Portfolio - Dorian PAREJA" />
-    <meta property="og:description" content="Projets, compétences, parcours et contact. Étudiant L3 Info - recherche de stage à partir d’avril 2026." />
+    <meta property="og:description" content="Projets, comp&eacute;tences, parcours et contact. Étudiant L3 Info - recherche de stage &agrave; partir d’avril 2026." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="resources/og-image.jpg" />
     <meta property="og:url" content="https://example.com/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfolio - Dorian PAREJA" />
-    <meta name="twitter:description" content="Projets, compétences, parcours et contact. Étudiant L3 Info - recherche de stage à partir d’avril 2026." />
+    <meta name="twitter:description" content="Projets, comp&eacute;tences, parcours et contact. Étudiant L3 Info - recherche de stage &agrave; partir d’avril 2026." />
     <meta name="twitter:image" content="resources/og-image.jpg" />
 
     <script>
         (function () {
-            const saved = localStorage.getItem('theme');      // 'light' | 'dark' | null
-            const theme = saved || 'light';                   // défaut = light
+            const saved = localStorage.getItem('theme');
+            const theme = saved || 'light';
             document.documentElement.setAttribute('data-theme', theme);
-            if (!saved) localStorage.setItem('theme', theme); // mémorise le défaut pour la prochaine fois
+            if (!saved) localStorage.setItem('theme', theme);
 
-            // Optionnel : synchroniser la barre d'adresse mobile
             const metaTC = document.querySelector('meta[name="theme-color"]');
             if (metaTC) metaTC.setAttribute('content', theme === 'dark' ? '#0d0f14' : '#f6f7fb');
         })();
@@ -90,23 +89,24 @@
                     Salut&nbsp;!<br />Moi c&apos;est <span class="accent">Dorian PAREJA</span>.
                 </h1>
                 <h2 class="subtitle">
-                    J&apos;aime transformer des id&eacute;es en projets, donner vie à des applications, et d&eacute;velopper des interfaces simples, claires et fonctionnelles.
+                    J&apos;aime transformer des id&eacute;es en projets, donner vie &agrave; des applications, et d&eacute;velopper des interfaces simples, claires et fonctionnelles.
                 </h2>
             </div>
 
+            <!-- TODO SECTION A AUTOMATISER DEPUIS UN FICHIER QUI STOCKE LES PROJETS EN COURS ET LEURS INFOS -->
             <div class="tilt">
                 <div class="card" id="tiltCard">
                     <h3 style="margin-top:0">En ce moment&nbsp;:</h3>
                     <p class="card-tilde-content">
                         <a href="#works">
-                            Développement d&apos;une application web de gestion de <strong>cocktails</strong> (recettes,&nbsp;ingrédients,&nbsp;favoris,&nbsp;...) avec sauvegarde de <strong>données utilisateurs</strong> (comptes,&nbsp;favoris,&nbsp;...) dans le cadre du module «&nbsp;Conception d&apos;Applications Web&nbsp;» en L3-Informatique à l&apos;Université de Lorraine.
-                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#html5 #php #javascript</span>
+                            D&eacute;veloppement d&apos;une <strong>Single Page Application</strong> Angular sur un sujet libre (routing,&nbsp;services,&nbsp;formulaires r&eacute;actifs,&nbsp;pipes personnalis&eacute;s,&nbsp;...) dans le cadre du module optionnel "&nbsp;Technologies du Web&nbsp;" en L3-Informatique &agrave; l&apos;Universit&eacute; de Lorraine - r&eacute;alis&eacute; en <strong>binôme</strong>.
+                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#angular #typescript #html #css</span>
                         </a>
                     </p>
                     <p class="card-tilde-content-last">
                         <a href="#works">
-                            Conception d&apos;une base de données et de sa gestion dans le cadre du module «&nbsp;Conception et Modélisation de BDD&nbsp;» en L3-Informatique à l&apos;Université de Lorraine.
-                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#MCD/MLD #normalisation #SQL #PL-SQL</span>
+                            D&eacute;veloppement d&apos;une <strong>application web mobile</strong> de suivi de visionnage de films et s&eacute;ries avec Ionic &amp; Angular (API externe,&nbsp;Capacitor,&nbsp;navigation par onglets,&nbsp;...) dans le cadre du module "&nbsp;D&eacute;veloppement Web Mobile&nbsp;" en L3-Informatique &agrave; l&apos;Universit&eacute; de Lorraine - r&eacute;alis&eacute; en <strong>trin&ocirc;me</strong>.
+                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#ionic #angular #capacitor #typescript</span>
                         </a>
                     </p>
                 </div>
@@ -118,33 +118,32 @@
             <a class="btn" href="#about">Voir mon parcours</a>
             <a class="btn" href="#contact">Me contacter</a>
             <a class="btn" href="resources/CV_PAREJA_Dorian.pdf" download>CV&nbsp;(PDF)</a>
-            <!--<button class="btn btn-disabled" disabled aria-disabled="true">CV&nbsp;(En refonte...)</button>-->
         </div>
 
         <div class="marquee" aria-hidden="true">
             <div class="marquee-viewport">
                 <div class="marquee-track">
-                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">JavaScript</span>
-                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Bases de données</span><span class="pill">MCD/MLD</span>
+                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">Sessions</span><span class="pill">Cookies</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Angular</span><span class="pill">Ionic</span><span class="pill">Capacitor</span>
+                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Oracle</span><span class="pill">Proc&eacute;dures stock&eacute;es</span><span class="pill">Triggers</span><span class="pill">Bases de donn&eacute;es</span><span class="pill">MCD/MLD</span>
                     <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
-                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span>
-                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span>
-                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span>
-                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
-                    <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
-                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
+                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span><span class="pill">JDBC</span><span class="pill">Design Patterns</span>
+                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span><span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">R&eacute;gression</span><span class="pill">Jupyter</span>
+                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">R&eacute;cursivit&eacute;</span><span class="pill">Complexit&eacute;</span>
+                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">M&eacute;moire</span><span class="pill">Pointeurs</span>
+                    <span class="pill">S&eacute;maphores</span><span class="pill">Processus/Threads</span><span class="pill">R&eacute;seaux</span><span class="pill">Commandes r&eacute;seau</span>
+                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">Maven</span><span class="pill">CMake</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
                     <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
                 </div>
                 <div class="marquee-track" aria-hidden="true">
-                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">JavaScript</span>
-                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Bases de données</span><span class="pill">MCD/MLD</span>
+                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">Sessions</span><span class="pill">Cookies</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Angular</span><span class="pill">Ionic</span><span class="pill">Capacitor</span>
+                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Oracle</span><span class="pill">Proc&eacute;dures stock&eacute;es</span><span class="pill">Triggers</span><span class="pill">Bases de donn&eacute;es</span><span class="pill">MCD/MLD</span>
                     <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
-                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span>
-                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span>
-                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">Récursivité</span><span class="pill">Complexité</span>
-                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">Mémoire</span><span class="pill">Pointeurs</span>
-                    <span class="pill">Sémaphores</span><span class="pill">Processus/Threads</span><span class="pill">Réseaux</span><span class="pill">Commandes réseau</span>
-                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
+                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span><span class="pill">JDBC</span><span class="pill">Design Patterns</span>
+                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span><span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">R&eacute;gression</span><span class="pill">Jupyter</span>
+                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">R&eacute;cursivit&eacute;</span><span class="pill">Complexit&eacute;</span>
+                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">M&eacute;moire</span><span class="pill">Pointeurs</span>
+                    <span class="pill">S&eacute;maphores</span><span class="pill">Processus/Threads</span><span class="pill">R&eacute;seaux</span><span class="pill">Commandes r&eacute;seau</span>
+                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">Maven</span><span class="pill">CMake</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
                     <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
                 </div>
             </div>
@@ -164,18 +163,71 @@
         </div>
     </section>
 
-    <section id="works" class="reveal">
-        <div class="section-title"><span class="dot"></span><h2 style="margin:0">Projets</h2></div>
-        <div class="rail" id="rail"></div>
+    <section id="works">
+        <section id="UniversityWorks" class="reveal">
+            <div class="section-title"><span class="dot"></span><h2 style="margin:0">Projets Universitaires</h2></div>
+            <div id="railUniversityProjects"></div>
+        </section>
+
+        <!--<section id="PersonnalWorks" class="reveal">
+            <div class="section-title"><span class="dot"></span><h2 style="margin:0">Projets Personnels</h2></div>
+            <div id="railPersonnalProjects"></div>
+        </section>-->
     </section>
 
+    <!-- TODO SECTION A AUTOMATISER DEPUIS UN FICHIER QUI STOCKE LES ANNÉES ET LEURS INFOS -->
     <section id="about" class="reveal">
         <div class="section-title"><span class="dot"></span><h2 style="margin:0">Parcours</h2></div>
         <div class="panel">
-            <p><strong>Licence 3 Informatique</strong> - Université de Lorraine (2025 - en cours)<br/><span style="color:var(--muted)">PHP,&nbsp;JavaScript,&nbsp;C++/POO,&nbsp;BDD,&nbsp;PL-SQL,&nbsp;Réseaux,&nbsp;Commandes réseau</span></p>
-            <p><strong>Licence 2 Informatique</strong> - Université de Lorraine (2024 - 2025)<br/><span style="color:var(--muted)">Java/POO,&nbsp;IHM/JavaFX,&nbsp;Algorithmique,&nbsp;Récursivité,&nbsp;complexité&nbsp;en&nbsp;temps,&nbsp;Graphes,&nbsp;IA,&nbsp;Réseaux,&nbsp;Systèmes,<br />UNO&nbsp;(Java),&nbsp;ChessQuitto&nbsp;(IA&nbsp;Python),&nbsp;Pendu&nbsp;(JavaFX),&nbsp;Bentley-Ottmann&nbsp;(C)</span></p>
-            <p><strong>Licence 1 Informatique</strong> - Université de Lorraine (2023 - 2024)<br/><span style="color:var(--muted)">C,&nbsp;Gestion de la mémoire,&nbsp;Pointeurs,&nbsp;Algorithmique,&nbsp;HTML5/CSS,&nbsp;Bases PHP</span></p>
-            <p><strong>Baccalauréat général Spécialités Mathématiques et Informatique (NSI)</strong> - Lycée Charles Jully Saint-Avold (2021 - 2022)<br/><span style="color:var(--muted)">Algorithmique,&nbsp;Python,&nbsp;HTML4/CSS,&nbsp;SQL,&nbsp;bases de POO</span></p>
+            <p>
+                <strong>Licence 3 Informatique</strong> - Universit&eacute; de Lorraine (2025 - en cours)<br/>
+                <span style="color:var(--muted)">
+                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        PHP, HTML5/CSS, JavaScript, Sessions/Cookies, C++/POO, Oracle/PL-SQL, Triggers, MCD/MLD, Angular, TypeScript, Ionic, Capacitor, Python/ML, Pandas, Scikit-learn, Design&nbsp;Patterns, R&eacute;seaux, Commandes&nbsp;r&eacute;seau,<br />
+                    </span>
+
+                    <strong><em>Applications des concepts&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        Site Cocktails&nbsp;(PHP), Location&nbsp;Oracle&nbsp;(PL/SQL+Triggers), Apprentissage&nbsp;supervis&eacute;&nbsp;(Python/ML), G&eacute;om&eacute;trie&nbsp;2D&nbsp;(C++/Java), Angular&nbsp;(Single Page Application),  Ionic&nbsp;(App de gestion de films/series)
+                    </span>
+                </span>
+            </p>
+            <hr />
+            <p>
+                <strong>Licence 2 Informatique</strong> - Universit&eacute; de Lorraine (2024 - 2025)<br/>
+                <span style="color:var(--muted)">
+                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        Java/POO, IHM/JavaFX, Algorithmique, R&eacute;cursivit&eacute;, Complexit&eacute;&nbsp;en&nbsp;temps, Graphes, IA, R&eacute;seaux, Syst&egrave;mes,
+                    </span>
+
+                    <strong><em>Applications des concepts&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        UNO&nbsp;(Java), ChessQuitto&nbsp;(IA&nbsp;Python), Pendu&nbsp;(JavaFX), Bentley-Ottmann&nbsp;(C)
+                    </span>
+                </span>
+            </p>
+            <hr />
+            <p>
+                <strong>Licence 1 Informatique</strong> - Universit&eacute; de Lorraine (2023 - 2024)<br/>
+                <span style="color:var(--muted)">
+                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        C, Gestion&nbsp;de&nbsp;la&nbsp;m&eacute;moire, Pointeurs, Algorithmique, HTML5/CSS, Bases&nbsp;PHP
+                    </span>
+                </span>
+            </p>
+            <hr />
+            <p>
+                <strong>Baccalaur&eacute;at g&eacute;n&eacute;ral Sp&eacute;cialit&eacute;s Math&eacute;matiques et Informatique (NSI)</strong> - Lyc&eacute;e Charles Jully Saint-Avold (2021 - 2022)<br/>
+                <span style="color:var(--muted)">
+                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
+                    <span style="display:block; padding-left:3%">
+                        Algorithmique, Python, HTML4/CSS, SQL, Bases&nbsp;de&nbsp;POO
+                    </span>
+                </span>
+            </p>
         </div>
     </section>
 
@@ -201,7 +253,7 @@
                 </div>
 
                 <div class="contact-col">
-                    <h3>Mes réseaux&nbsp;:</h3>
+                    <h3>Mes r&eacute;seaux&nbsp;:</h3>
                     <div class="socials">
                         <a class="social" target="_blank" href="https://www.linkedin.com/in/pareja-dorian/" aria-label="LinkedIn" rel="noopener noreferrer">
                             <svg width="30" height="30" role="img" viewBox="0 0 16 16" fill="currentColor">
@@ -222,7 +274,7 @@
 </main>
 
 <footer class="wrap">
-    <p style="color:var(--muted); text-align: right">Portfolio&nbsp;-&nbsp;<span id="year"></span>&nbsp;Dorian PAREJA&nbsp;&copy;&nbsp;-&nbsp;Tous droits réservés.</p>
+    <p style="color:var(--muted); text-align: right">Portfolio&nbsp;-&nbsp;<span id="year"></span>&nbsp;Dorian PAREJA&nbsp;&copy;&nbsp;-&nbsp;Tous droits r&eacute;serv&eacute;s.</p>
 </footer>
 
 <script type="module" src="assets/anims/intro.js"></script>

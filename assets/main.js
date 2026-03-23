@@ -1,4 +1,4 @@
-import { PROJECTS } from './projects.js';
+import {UNIVERSITY_PROJECTS, PERSONNAL_PROJECTS} from './projects.js';
 import { initParticles } from './anims/particles.js';
 import { initTilt } from './anims/tilt.js';
 import { initMagnetics } from './anims/magnetics.js';
@@ -23,10 +23,6 @@ function applyTheme(mode){
     applyTheme(saved);
   } else {
     applyTheme('light');
-    /* Pour obtenir le theme du systeme
-    const prefersLight = matchMedia('(prefers-color-scheme: light)').matches;
-    applyTheme(prefersLight ? 'light' : 'dark');
-    */
   }
 })();
 
@@ -50,7 +46,15 @@ initTilt('#tiltCard', 18);
 initMagnetics('.mag', '.btn');
 initStickyHeader();
 
-const rail = document.getElementById('rail');
+const railUniversityProjects = document.getElementById('railUniversityProjects');
+const railPersonnalProjects = document.getElementById('railPersonnalProjects');
+
+const CATEGORY_ORDER = [
+  "Développement Web",
+  "Développement Logiciel",
+  "Bases de données",
+  "Algorithmique & IA"
+];
 
 function projectCardTemplate(p, idx) {
   const linksHtml = p.links.map(l => {
@@ -82,37 +86,93 @@ function projectCardTemplate(p, idx) {
   `;
 }
 
-function renderWorks() {
-  if (!rail) return;
-  rail.innerHTML = PROJECTS.map((p, i) => projectCardTemplate(p, i)).join('');
-
+function registerReadToggles(rail) {
   rail.querySelectorAll('.read-toggle').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const idx = btn.getAttribute('data-idx');
-          const panel = document.getElementById(`details-${idx}`);
-          const isOpen = panel.classList.contains('open');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const idx = btn.getAttribute('data-idx');
+      const panel = document.getElementById(`details-${idx}`);
+      const isOpen = panel.classList.contains('open');
 
-          rail.querySelectorAll('.details.open').forEach(d => {
-              d.classList.remove('open');
-              const b = d.closest('.work')?.querySelector('.read-toggle');
-              if (b) { b.setAttribute('aria-expanded','false'); b.textContent = 'Lire'; }
-          });
-
-          if (!isOpen) {
-              panel.classList.add('open');
-              btn.setAttribute('aria-expanded','true');
-              btn.textContent = 'Fermer';
-              panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-          } else {
-              panel.classList.remove('open');
-              btn.setAttribute('aria-expanded','false');
-              btn.textContent = 'Lire';
-          }
+      rail.querySelectorAll('.details.open').forEach(d => {
+        d.classList.remove('open');
+        const b = d.closest('.work')?.querySelector('.read-toggle');
+        if (b) { b.setAttribute('aria-expanded','false'); b.textContent = 'Lire'; }
       });
+
+      if (!isOpen) {
+        panel.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        btn.textContent = 'Fermer';
+        panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      } else {
+        panel.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.textContent = 'Lire';
+      }
+    });
   });
 }
-renderWorks();
+
+function renderWorks(typeOfWorks) {
+  let projects, container, prefix;
+  if (typeOfWorks === "university") {
+    if (!railUniversityProjects) return;
+    container = railUniversityProjects;
+    projects = UNIVERSITY_PROJECTS;
+    prefix = 'u';
+  } else if (typeOfWorks === "personnal") {
+    if (!railPersonnalProjects) return;
+    container = railPersonnalProjects;
+    projects = PERSONNAL_PROJECTS;
+    prefix = 'p';
+  } else {
+    return;
+  }
+
+  container.innerHTML = '';
+  const hasCategories = projects.some(p => p.category);
+
+  if (!hasCategories) {
+    const rail = document.createElement('div');
+    rail.className = 'rail';
+    rail.innerHTML = projects.map((p, i) => projectCardTemplate(p, `${prefix}${i}`)).join('');
+    container.appendChild(rail);
+    registerReadToggles(rail);
+    return;
+  }
+
+  const grouped = {};
+  projects.forEach((p, i) => {
+    const cat = p.category || "Autres";
+    if (!grouped[cat]) grouped[cat] = [];
+    grouped[cat].push({ project: p, idx: `${prefix}${i}` });
+  });
+
+  const orderedCats = CATEGORY_ORDER.filter(c => grouped[c]);
+  Object.keys(grouped).forEach(c => { if (!orderedCats.includes(c)) orderedCats.push(c); });
+
+  orderedCats.forEach(cat => {
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'category-group';
+
+    const label = document.createElement('h3');
+    label.className = 'category-label';
+    label.textContent = cat;
+
+    const rail = document.createElement('div');
+    rail.className = 'rail';
+    rail.innerHTML = grouped[cat].map(({ project, idx }) => projectCardTemplate(project, idx)).join('');
+
+    groupDiv.appendChild(label);
+    groupDiv.appendChild(rail);
+    container.appendChild(groupDiv);
+    registerReadToggles(rail);
+  });
+}
+
+renderWorks("university");
+renderWorks("personnal");
 
 addEventListener('keydown', (e) => {
   if (!rail) return;
