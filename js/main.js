@@ -1,4 +1,9 @@
-import {UNIVERSITY_PROJECTS, PERSONNAL_PROJECTS} from './projects.js';
+import { UNIVERSITY_PROJECTS, PERSONNAL_PROJECTS } from '../data/projects.js';
+import { CURRENT_PROJECTS } from '../data/current.js';
+import { SKILLS } from '../data/skills.js';
+import { PROFILE } from '../data/profile.js';
+import { EDUCATION } from '../data/education.js';
+import { CONTACT } from '../data/contact.js';
 import { initParticles } from './anims/particles.js';
 import { initTilt } from './anims/tilt.js';
 import { initMagnetics } from './anims/magnetics.js';
@@ -178,6 +183,63 @@ function renderWorks(typeOfWorks) {
 
 renderWorks("university");
 renderWorks("personnal");
+
+// ── Render hero subtitle ──────────────────────────────────────────────────────
+(function renderHeroSubtitle() {
+  const el = document.getElementById('heroSubtitle');
+  if (el) el.textContent = PROFILE.heroSubtitle;
+})();
+
+// ── Render "En ce moment" card ────────────────────────────────────────────────
+(function renderCurrentProjects() {
+  const container = document.getElementById('currentProjectsList');
+  if (!container) return;
+  container.innerHTML = CURRENT_PROJECTS.map((p, i) => {
+    const cls = i === CURRENT_PROJECTS.length - 1 ? 'card-tilde-content-last' : 'card-tilde-content';
+    return `<p class="${cls}"><a href="${p.href}">${p.description}<br/><span style="font:600 12px/1 'IBM Plex Mono',monospace;color:var(--accent)">${p.tags.join(' ')}</span></a></p>`;
+  }).join('');
+})();
+
+// ── Render marquee skills ─────────────────────────────────────────────────────
+(function renderMarquee() {
+  const viewport = document.getElementById('marqueeViewport');
+  if (!viewport) return;
+  const pills = SKILLS.map(s => `<span class="pill">${s}</span>`).join('');
+  const track = `<div class="marquee-track">${pills}</div>`;
+  viewport.innerHTML = track + `<div class="marquee-track" aria-hidden="true">${pills}</div>`;
+})();
+
+// ── Render description ────────────────────────────────────────────────────────
+(function renderDescription() {
+  const panel = document.getElementById('descriptionPanel');
+  if (panel) panel.innerHTML = `<p class="p-description">${PROFILE.description}</p>`;
+})();
+
+// ── Render parcours ───────────────────────────────────────────────────────────
+(function renderEducation() {
+  const panel = document.getElementById('educationPanel');
+  if (!panel) return;
+  panel.innerHTML = EDUCATION.map((e, i) => {
+    const projectsHtml = e.projects.length
+      ? `<strong><em>Applications des concepts&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.projects.join(', ')}</span>`
+      : '';
+    const hr = i < EDUCATION.length - 1 ? '<hr />' : '';
+    return `<p><strong>${e.title}</strong> — ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
+  }).join('');
+})();
+
+// ── Render contact ────────────────────────────────────────────────────────────
+(function renderContact() {
+  const panel = document.getElementById('contactPanel');
+  if (!panel) return;
+  const contactsHtml = CONTACT.contacts.map(c =>
+    `<li><strong>${c.label}&nbsp;:</strong> <a href="${c.href}">${c.display}</a></li>`
+  ).join('');
+  const socialsHtml = CONTACT.socials.map(s =>
+    `<a class="social" target="_blank" href="${s.href}" aria-label="${s.label}" rel="noopener noreferrer"><svg width="30" height="30" role="img" viewBox="${s.viewBox}" fill="currentColor"><use href="#${s.icon}"></use></svg></a>`
+  ).join('');
+  panel.innerHTML = `<p>${CONTACT.intro}</p><div class="contact-blocks"><div class="contact-col"><h3>Mes informations de contact&nbsp;:</h3><ul class="contact-list">${contactsHtml}</ul></div><div class="contact-col"><h3>Mes réseaux&nbsp;:</h3><div class="socials">${socialsHtml}</div></div></div>`;
+})();
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("thumb-img")) {

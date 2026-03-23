@@ -10,7 +10,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/ashigi444/projetCocktails" }
     ],
-    img: "resources/projects/gestion_coktails.jpg"
+    img: "public/images/projects/gestion_coktails.jpg"
   },
   {
     title: "Application Angular - Star Wars (TP)",
@@ -22,7 +22,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Star-Wars-Angular-Application" }
     ],
-    img: "resources/projects/starwars_app.jpg"
+    img: "public/images/projects/starwars_app.jpg"
   },
 
   // Dev Logiciel
@@ -36,7 +36,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/distributed-2d-geometry-engine" }
     ],
-    img: "resources/projects/geometry2D_engine.jpg"
+    img: "public/images/projects/geometry2D_engine.jpg"
   },
   {
     title: "UNO Multijoueur",
@@ -48,7 +48,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Jeu-du-Uno-PS4" }
     ],
-    img: "resources/projects/uno.jpg"
+    img: "public/images/projects/uno.jpg"
   },
   {
     title: "Jeu du Pendu",
@@ -60,7 +60,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Jeu-du-Pendu-PS4" }
     ],
-    img: "resources/projects/pendu.jpg"
+    img: "public/images/projects/pendu.jpg"
   },
 
   // Algos et IA
@@ -74,7 +74,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Bentley-Ottmann-PS3" }
     ],
-    img: "resources/projects/bentley-ottmann.jpg"
+    img: "public/images/projects/bentley-ottmann.jpg"
   },
   {
     title: "IA ChessQuito",
@@ -86,7 +86,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/IA-ChessQuito" }
     ],
-    img: "resources/projects/chessquito.jpg"
+    img: "public/images/projects/chessquito.jpg"
   },
   {
     title: "Apprentissage supervisé par régression",
@@ -98,7 +98,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Projet_AAS" }
     ],
-    img: "resources/projects/aas.jpg"
+    img: "public/images/projects/aas.jpg"
   },
 
   // Bases De Données

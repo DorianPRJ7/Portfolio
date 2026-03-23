@@ -29,13 +29,13 @@
         })();
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap"></noscript>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -88,27 +88,13 @@
                 <h1 class="title">
                     Salut&nbsp;!<br />Moi c&apos;est <span class="accent">Dorian PAREJA</span>.
                 </h1>
-                <h2 class="subtitle">
-                    J&apos;aime transformer des id&eacute;es en projets, donner vie &agrave; des applications, et d&eacute;velopper des interfaces simples, claires et fonctionnelles.
-                </h2>
+                <h2 class="subtitle" id="heroSubtitle"></h2>
             </div>
 
-            <!-- TODO SECTION A AUTOMATISER DEPUIS UN FICHIER QUI STOCKE LES PROJETS EN COURS ET LEURS INFOS -->
             <div class="tilt">
                 <div class="card" id="tiltCard">
                     <h3 style="margin-top:0">En ce moment&nbsp;:</h3>
-                    <p class="card-tilde-content">
-                        <a href="#works">
-                            D&eacute;veloppement d&apos;une <strong>Single Page Application</strong> Angular sur un sujet libre (routing,&nbsp;services,&nbsp;formulaires r&eacute;actifs,&nbsp;pipes personnalis&eacute;s,&nbsp;...) dans le cadre du module optionnel&nbsp;&quot;Technologies du Web&quot;&nbsp; en L3-Informatique &agrave; l&apos;Universit&eacute; de Lorraine - r&eacute;alis&eacute; en <strong>binôme</strong>.
-                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#angular #typescript #html #css</span>
-                        </a>
-                    </p>
-                    <p class="card-tilde-content-last">
-                        <a href="#works">
-                            D&eacute;veloppement d&apos;une <strong>application web mobile</strong> de suivi de visionnage de films et s&eacute;ries avec Ionic &amp; Angular (API externe,&nbsp;Capacitor,&nbsp;navigation par onglets,&nbsp;...) dans le cadre du module&nbsp;&quot;D&eacute;veloppement Web Mobile&quot;&nbsp; en L3-Informatique &agrave; l&apos;Universit&eacute; de Lorraine - r&eacute;alis&eacute; en <strong>trin&ocirc;me</strong>.
-                            <br/><span style="font:600 12px/1 'IBM Plex Mono', monospace; color:var(--accent)">#ionic #angular #capacitor #typescript</span>
-                        </a>
-                    </p>
+                    <div id="currentProjectsList"></div>
                 </div>
             </div>
         </div>
@@ -117,50 +103,17 @@
             <a class="btn" href="#works">Voir mes projets</a>
             <a class="btn" href="#about">Voir mon parcours</a>
             <a class="btn" href="#contact">Me contacter</a>
-            <a class="btn" href="resources/CV_PAREJA_Dorian.pdf" download>CV&nbsp;(PDF)</a>
+            <a class="btn" href="public/CV_PAREJA_Dorian.pdf" download>CV&nbsp;(PDF)</a>
         </div>
 
         <div class="marquee" aria-hidden="true">
-            <div class="marquee-viewport">
-                <div class="marquee-track">
-                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">Sessions</span><span class="pill">Cookies</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Angular</span><span class="pill">Ionic</span><span class="pill">Capacitor</span>
-                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Oracle</span><span class="pill">Proc&eacute;dures stock&eacute;es</span><span class="pill">Triggers</span><span class="pill">Bases de donn&eacute;es</span><span class="pill">MCD/MLD</span>
-                    <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
-                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span><span class="pill">JDBC</span><span class="pill">Design Patterns</span>
-                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span><span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">R&eacute;gression</span><span class="pill">Jupyter</span>
-                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">R&eacute;cursivit&eacute;</span><span class="pill">Complexit&eacute;</span>
-                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">M&eacute;moire</span><span class="pill">Pointeurs</span>
-                    <span class="pill">S&eacute;maphores</span><span class="pill">Processus/Threads</span><span class="pill">R&eacute;seaux</span><span class="pill">Commandes r&eacute;seau</span>
-                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">Maven</span><span class="pill">CMake</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
-                    <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
-                </div>
-                <div class="marquee-track" aria-hidden="true">
-                    <span class="pill">HTML5</span><span class="pill">CSS</span><span class="pill">PHP</span><span class="pill">Sessions</span><span class="pill">Cookies</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Angular</span><span class="pill">Ionic</span><span class="pill">Capacitor</span>
-                    <span class="pill">SQL</span><span class="pill">PL-SQL</span><span class="pill">Oracle</span><span class="pill">Proc&eacute;dures stock&eacute;es</span><span class="pill">Triggers</span><span class="pill">Bases de donn&eacute;es</span><span class="pill">MCD/MLD</span>
-                    <span class="pill">Normalisation</span><span class="pill">C++/POO</span><span class="pill">Java/POO</span><span class="pill">IHM/JavaFX</span>
-                    <span class="pill">MVC</span><span class="pill">FXML</span><span class="pill">Scene Builder</span><span class="pill">Threads/Sockets</span><span class="pill">JDBC</span><span class="pill">Design Patterns</span>
-                    <span class="pill">Python</span><span class="pill">MinMax</span><span class="pill">Alpha-Bêta</span><span class="pill">A*</span><span class="pill">Heuristiques</span><span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">R&eacute;gression</span><span class="pill">Jupyter</span>
-                    <span class="pill">IA</span><span class="pill">Graphes</span><span class="pill">R&eacute;cursivit&eacute;</span><span class="pill">Complexit&eacute;</span>
-                    <span class="pill">C</span><span class="pill">Systèmes</span><span class="pill">M&eacute;moire</span><span class="pill">Pointeurs</span>
-                    <span class="pill">S&eacute;maphores</span><span class="pill">Processus/Threads</span><span class="pill">R&eacute;seaux</span><span class="pill">Commandes r&eacute;seau</span>
-                    <span class="pill">Git</span><span class="pill">Bash</span><span class="pill">Scripts</span><span class="pill">Maven</span><span class="pill">CMake</span><span class="pill">MySQL</span><span class="pill">SQLite</span>
-                    <span class="pill">CLion</span><span class="pill">IntelliJ IDEA</span><span class="pill">Eclipse</span><span class="pill">PhpStorm</span>
-                </div>
-            </div>
+            <div class="marquee-viewport" id="marqueeViewport"></div>
         </div>
     </section>
 
     <section id="description" class="reveal">
         <div class="section-title"><span class="dot"></span><h2 style="margin:0">Description</h2></div>
-        <div class="panel">
-            <p class="p-description">
-                Etudiant en 3&egrave;me ann&eacute;e de Licence Informatique (bac+3) &agrave; l&apos;Universit&eacute; de Lorraine, je recherche un <strong>stage</strong> de <strong>2 &agrave; 4 mois</strong> &agrave; partir du <strong>13 avril 2026</strong>.<br />
-                Passionn&eacute; par la <strong>programmation</strong> et le <strong>d&eacute;veloppement</strong>, j&apos;aime concevoir et programmer des projets comme des <strong><em>algorithmes, jeux, logiciels, sites web ou applications interactives</em></strong>.<br />
-                Je m&apos;int&eacute;resse avant tout au fonctionnement interne des programmes et &agrave; la logique du code, tout en veillant &agrave; concevoir des interfaces simples et compr&eacute;hensibles.<br />
-                Je travaille principalement avec <strong><em>C/C++, Java/JavaFX, PHP, Python et les scripts Bash</em></strong>.<br />
-                Mon objectif est de d&eacute;couvrir le monde professionnel du <strong>d&eacute;veloppement logiciel, web</strong> ou <strong>les syst&egrave;mes</strong>, et d&apos;approfondir mes comp&eacute;tences techniques et mon sens de la conception avant de poursuivre mes &eacute;tudes en <strong>Master (bac+5)</strong>.
-            </p>
-        </div>
+        <div class="panel" id="descriptionPanel"></div>
     </section>
 
     <section id="works" class="reveal">
@@ -175,101 +128,16 @@
         </div>-->
     </section>
 
-    <!-- TODO SECTION A AUTOMATISER DEPUIS UN FICHIER QUI STOCKE LES ANNÉES ET LEURS INFOS -->
     <section id="about" class="reveal">
         <div class="section-title"><span class="dot"></span><h2 style="margin:0">Parcours</h2></div>
-        <div class="panel">
-            <p>
-                <strong>Licence 3 Informatique</strong> - Universit&eacute; de Lorraine (2025 - en cours)<br/>
-                <span style="color:var(--muted)">
-                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        PHP, HTML5/CSS, JavaScript, Sessions/Cookies, C++/POO, Oracle/PL-SQL, Triggers, MCD/MLD, Angular, TypeScript, Ionic, Capacitor, Python/ML, Pandas, Scikit-learn, Design&nbsp;Patterns, R&eacute;seaux, Commandes&nbsp;r&eacute;seau,<br />
-                    </span>
-
-                    <strong><em>Applications des concepts&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        Site Cocktails&nbsp;(PHP), Location&nbsp;Oracle&nbsp;(PL/SQL+Triggers), Apprentissage&nbsp;supervis&eacute;&nbsp;(Python/ML), G&eacute;om&eacute;trie&nbsp;2D&nbsp;(C++/Java), Angular&nbsp;(Single Page Application),  Ionic&nbsp;(App de gestion de films/series)
-                    </span>
-                </span>
-            </p>
-            <hr />
-            <p>
-                <strong>Licence 2 Informatique</strong> - Universit&eacute; de Lorraine (2024 - 2025)<br/>
-                <span style="color:var(--muted)">
-                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        Java/POO, IHM/JavaFX, Algorithmique, R&eacute;cursivit&eacute;, Complexit&eacute;&nbsp;en&nbsp;temps, Graphes, IA, R&eacute;seaux, Syst&egrave;mes,
-                    </span>
-
-                    <strong><em>Applications des concepts&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        UNO&nbsp;(Java), ChessQuitto&nbsp;(IA&nbsp;Python), Pendu&nbsp;(JavaFX), Bentley-Ottmann&nbsp;(C)
-                    </span>
-                </span>
-            </p>
-            <hr />
-            <p>
-                <strong>Licence 1 Informatique</strong> - Universit&eacute; de Lorraine (2023 - 2024)<br/>
-                <span style="color:var(--muted)">
-                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        C, Gestion&nbsp;de&nbsp;la&nbsp;m&eacute;moire, Pointeurs, Algorithmique, HTML5/CSS, Bases&nbsp;PHP
-                    </span>
-                </span>
-            </p>
-            <hr />
-            <p>
-                <strong>Baccalaur&eacute;at g&eacute;n&eacute;ral Sp&eacute;cialit&eacute;s Math&eacute;matiques et Informatique (NSI)</strong> - Lyc&eacute;e Charles Jully Saint-Avold (2021 - 2022)<br/>
-                <span style="color:var(--muted)">
-                    <strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/>
-                    <span style="display:block; padding-left:3%">
-                        Algorithmique, Python, HTML4/CSS, SQL, Bases&nbsp;de&nbsp;POO
-                    </span>
-                </span>
-            </p>
-        </div>
+        <div class="panel" id="educationPanel"></div>
     </section>
 
     <section id="contact" class="reveal">
         <div class="section-title">
             <span class="dot"></span><h2 style="margin:0">Contact</h2>
         </div>
-        <div class="panel">
-            <p>
-                Je suis actuellement &agrave; la recherche d&apos;un <strong>stage</strong> de fin de 3&egrave;me ann&eacute;e de Licence Informatique, d&apos;une dur&eacute;e de <strong>2 &agrave; 4 mois</strong> &agrave; partir du <strong>13 avril 2026</strong>, dans les domaines du <strong>d&eacute;veloppement logiciel, web</strong> ou <strong>les syst&egrave;mes</strong>.<br />
-                Passionn&eacute; par la programmation et le d&eacute;veloppement, rigoureux et motiv&eacute;, j&apos;aimerais rejoindre une &eacute;quipe o&ugrave; je pourrais mettre en pratique mes comp&eacute;tences, d&eacute;couvrir le monde professionnel et continuer &agrave; progresser.<br />
-                N&apos;h&eacute;sitez pas &agrave; me contacter si mon profil correspond &agrave; vos besoins, ou simplement pour &eacute;changer autour du d&eacute;veloppement.
-            </p>
-
-            <div class="contact-blocks">
-                <div class="contact-col">
-                    <h3>Mes informations de contact&nbsp;:</h3>
-                    <ul class="contact-list">
-                        <li><strong>Mail pro&nbsp;:</strong> <a href="mailto:dorian.pareja.pro@gmail.com">dorian.pareja.pro@gmail.com</a></li>
-                        <li><strong>Mail universitaire&nbsp;:</strong> <a href="mailto:dorian.pareja9@etu.univ-lorraine.fr">dorian.pareja9@etu.univ-lorraine.fr</a></li>
-                        <li><strong>Tel&nbsp;:</strong> <a href="tel:+33615822794">+33&nbsp;6&nbsp;15&nbsp;82&nbsp;27&nbsp;94</a></li>
-                    </ul>
-                </div>
-
-                <div class="contact-col">
-                    <h3>Mes r&eacute;seaux&nbsp;:</h3>
-                    <div class="socials">
-                        <a class="social" target="_blank" href="https://www.linkedin.com/in/pareja-dorian/" aria-label="LinkedIn" rel="noopener noreferrer">
-                            <svg width="30" height="30" role="img" viewBox="0 0 16 16" fill="currentColor">
-                                <use href="#icon-linkedin"></use>
-                            </svg>
-                        </a>
-
-                        <a class="social" target="_blank" href="https://github.com/DorianPRJ7" aria-label="GitHub" rel="noopener noreferrer">
-                            <svg width="30" height="30" role="img" viewBox="0 0 24 24" fill="currentColor">
-                                <use href="#icon-github"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="panel" id="contactPanel"></div>
     </section>
 </main>
 
@@ -277,7 +145,7 @@
     <p style="color:var(--muted); text-align: right">Portfolio&nbsp;-&nbsp;<span id="year"></span>&nbsp;Dorian PAREJA&nbsp;&copy;&nbsp;-&nbsp;Tous droits r&eacute;serv&eacute;s.</p>
 </footer>
 
-<script type="module" src="assets/anims/intro.js"></script>
-<script type="module" src="assets/main.js"></script>
+<script type="module" src="js/anims/intro.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
