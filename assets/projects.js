@@ -19,7 +19,7 @@ export const UNIVERSITY_PROJECTS = [
     details: "Développement d'un jeu du Pendu en Java avec interface graphique JavaFX avec Eclipse IDE 2023-12 sur Windows, réalisé dans le cadre du module Interfaces Graphiques en Licence 2 Informatique à l'Université de Lorraine.\nL'objectif du projet était de concevoir une interface répondant simultanément aux besoins de plusieurs clients fictifs, chacun ayant ses propres contraintes fonctionnelles et esthétiques.\nL'application a été développée selon une architecture MVC (Modèle-Vue-Contrôleur), avec des vues construites via FXML et SceneBuilder. Elle intègre plusieurs interfaces de jeu, un système de gestion des lettres, du score, des erreurs et de la fin de partie, ainsi qu'une navigation fluide et intuitive entre les écrans (menu, règles, jeu, résultats).\nLe travail a également porté sur l'ergonomie, la cohérence graphique, la réutilisabilité du code et la gestion des événements utilisateurs (clavier, boutons, ...).\nLe projet a impliqué une analyse détaillée des besoins de clients fictifs, la création de maquettes avec Draw.io, puis le développement complet de l'interface graphique à partir du code de jeu fourni en Java (sans interface).\nRéalisé en trinôme, ce projet a permis de consolider la maîtrise de JavaFX et d'approfondir la conception d'interfaces centrées utilisateur, tout en appliquant une démarche d'ingénierie logicielle complète.",
     links: [
       { label: "Lire", href: "#" },
-      { label: "Voir", href: "https://github.com/DorianPRJ7/Jeu-du-Pendu-PS4" }
+      { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Jeu-du-Pendu-PS4" }
     ],
     img: "resources/projects/pendu.png"
   },
@@ -33,7 +33,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/distributed-2d-geometry-engine" }
     ],
-    img: ""
+    img: "resources/projects/geometry2D_engine.png"
   },
   {
     title: "Application web de recettes de cocktails",
@@ -45,7 +45,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/ashigi444/projetCocktails" }
     ],
-    img: ""
+    img: "resources/projects/gestion_coktails.png"
   },
   {
     title: "Application Angular - Star Wars (TP)",
@@ -117,12 +117,13 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/IA-ChessQuito" }
     ],
-    img: ""
+    img: "resources/projects/chessquito.png"
   }
 ];
 
 export const PERSONNAL_PROJECTS = [
-  {
+  // TODO projets à ajouter
+  /*{
     title: "Tableau de bord étudiant (Web)",
     tags:[],
     description:"",
@@ -141,5 +142,5 @@ export const PERSONNAL_PROJECTS = [
       {label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: ""}
     ],
     img: ""
-  }
+  }*/
 ]
