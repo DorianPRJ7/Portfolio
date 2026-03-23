@@ -27,7 +27,7 @@ export const UNIVERSITY_PROJECTS = [
 
   // Dev Logiciel
   {
-    title: "Moteur de géométrie 2D distribué — C++/Java",
+    title: "Moteur de géométrie 2D distribué - C++/Java",
     category: "Développement Logiciel",
     tags: ["C++", "Java", "TCP/IP", "Sockets", "Design Patterns", "JavaFX"],
     description: "Application distribuée C++/Java de gestion de formes géométriques 2D. Client C++ pour la logique métier, serveur Java multi-clients pour la visualisation, communication via sockets TCP/IP et protocole texte personnalisé.",
