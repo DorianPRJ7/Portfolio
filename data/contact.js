@@ -4,7 +4,7 @@ export const CONTACT = {
   contacts: [
     { label: "Mail pro", href: "mailto:dorian.pareja.pro@gmail.com", display: "dorian.pareja.pro@gmail.com" },
     { label: "Mail universitaire", href: "mailto:dorian.pareja9@etu.univ-lorraine.fr", display: "dorian.pareja9@etu.univ-lorraine.fr" },
-    { label: "Tel", href: "tel:+33615822794", display: "+33\u00a06\u00a015\u00a082\u00a027\u00a094" }
+    { label: "Tel", href: "tel:+33615822794", display: "+33&nbsp;6&nbsp;15&nbsp;82&nbsp;27&nbsp;94" }
   ],
 
   socials: [

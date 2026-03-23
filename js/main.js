@@ -66,6 +66,9 @@ function projectCardTemplate(p, idx) {
     if (l.label.toLowerCase() === 'lire') {
       return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false">Lire</button>`;
     }
+    if (l.icon) {
+      return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}"><svg width="20" height="20" role="img" viewBox="0 0 24 24" fill="currentColor"><use href="#${l.icon}"></use></svg></a>`;
+    }
     return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer">${l.label}</a>`;
   }).join('');
 
@@ -224,7 +227,7 @@ renderWorks("personnal");
       ? `<strong><em>Applications des concepts&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.projects.join(', ')}</span>`
       : '';
     const hr = i < EDUCATION.length - 1 ? '<hr />' : '';
-    return `<p><strong>${e.title}</strong> — ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
+    return `<p><strong>${e.title}</strong> - ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
   }).join('');
 })();
 
