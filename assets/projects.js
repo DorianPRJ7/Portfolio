@@ -22,7 +22,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Star-Wars-Angular-Application" }
     ],
-    img: ""
+    img: "resources/projects/starwars_app.jpg"
   },
 
   // Dev Logiciel
@@ -98,7 +98,7 @@ export const UNIVERSITY_PROJECTS = [
       { label: "Lire", href: "#" },
       { label: "<svg  width=\"20\" height=\"20\" role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><use href=\"#icon-github\"></use></svg>", href: "https://github.com/DorianPRJ7/Projet_AAS" }
     ],
-    img: ""
+    img: "resources/projects/aas.jpg"
   },
 
   // Bases De Données
