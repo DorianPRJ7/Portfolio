@@ -52,8 +52,8 @@ const railPersonnalProjects = document.getElementById('railPersonnalProjects');
 const CATEGORY_ORDER = [
   "Développement Web",
   "Développement Logiciel",
-  "Bases de données",
-  "Algorithmique & IA"
+  "Algorithmique & IA",
+  "Bases de données"
 ];
 
 function projectCardTemplate(p, idx) {
