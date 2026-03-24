@@ -1,13 +1,14 @@
+import { initParticles } from './anims/particles.js';
+import { initTilt } from './anims/tilt.js';
+import { initMagnetics } from './anims/magnetics.js';
+import { initStickyHeader } from './header.js';
+
 import { UNIVERSITY_PROJECTS, PERSONNAL_PROJECTS } from '../data/projects.js';
 import { CURRENT_PROJECTS } from '../data/current.js';
 import { SKILLS } from '../data/skills.js';
 import { PROFILE } from '../data/profile.js';
 import { EDUCATION } from '../data/education.js';
 import { CONTACT } from '../data/contact.js';
-import { initParticles } from './anims/particles.js';
-import { initTilt } from './anims/tilt.js';
-import { initMagnetics } from './anims/magnetics.js';
-import { initStickyHeader } from './header.js';
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
