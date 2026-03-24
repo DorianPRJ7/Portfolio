@@ -61,13 +61,18 @@ const CATEGORY_ORDER = [
   "Bases de données"
 ];
 
+const LINK_ICONS = {
+  'github': 'icon-github'
+};
+
 function projectCardTemplate(p, idx) {
   const linksHtml = p.links.map(l => {
     if (l.label.toLowerCase() === 'lire') {
       return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false" aria-label="Lire"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><use href="#icon-points"></use></svg></button>`;
     }
-    if (l.icon) {
-      return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}"><svg width="20" height="20" role="img" viewBox="0 0 24 24" fill="currentColor"><use href="#${l.icon}"></use></svg></a>`;
+    const icon = l.icon || LINK_ICONS[l.label.toLowerCase()];
+    if (icon) {
+      return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}"><svg width="20" height="20" role="img" viewBox="0 0 24 24" fill="currentColor"><use href="#${icon}"></use></svg></a>`;
     }
     return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer">${l.label}</a>`;
   }).join('');
