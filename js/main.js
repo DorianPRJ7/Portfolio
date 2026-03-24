@@ -64,7 +64,7 @@ const CATEGORY_ORDER = [
 function projectCardTemplate(p, idx) {
   const linksHtml = p.links.map(l => {
     if (l.label.toLowerCase() === 'lire') {
-      return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false">Lire</button>`;
+      return `<button type="button" class="link read-toggle" data-idx="${idx}" aria-controls="details-${idx}" aria-expanded="false" aria-label="Lire"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><use href="#icon-chevron-right"></use></svg></button>`;
     }
     if (l.icon) {
       return `<a class="link" href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}"><svg width="20" height="20" role="img" viewBox="0 0 24 24" fill="currentColor"><use href="#${l.icon}"></use></svg></a>`;
@@ -110,18 +110,16 @@ function registerReadToggles(rail) {
       rail.querySelectorAll('.details.open').forEach(d => {
         d.classList.remove('open');
         const b = d.closest('.work')?.querySelector('.read-toggle');
-        if (b) { b.setAttribute('aria-expanded','false'); b.textContent = 'Lire'; }
+        if (b) { b.setAttribute('aria-expanded','false'); }
       });
 
       if (!isOpen) {
         panel.classList.add('open');
         btn.setAttribute('aria-expanded','true');
-        btn.textContent = 'Fermer';
         panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
         panel.classList.remove('open');
         btn.setAttribute('aria-expanded','false');
-        btn.textContent = 'Lire';
       }
     });
   });

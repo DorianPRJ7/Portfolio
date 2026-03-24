@@ -221,6 +221,8 @@ button.link{
 html[data-theme="dark"] button.link{ border-color: rgba(255,255,255,.10) }
 button.link::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, var(--shine), transparent); transform:translateX(-100%); }
 button.link:hover::before{ animation:shine .7s; }
+button.read-toggle svg{ transition: transform .25s ease; }
+button.read-toggle[aria-expanded="true"] svg{ transform: rotate(90deg); }
 
 #description .panel, #about .panel, #contact .panel{border:1px solid rgba(0,0,0,.10); background:var(--panel); border-radius:22px; padding:24px; min-width:0}
 html[data-theme="dark"] #description .panel, html[data-theme="dark"] #about .panel, html[data-theme="dark"] #contact .panel{ border-color: rgba(255,255,255,.08) }
