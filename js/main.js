@@ -176,7 +176,7 @@ function renderWorks(typeOfWorks) {
 
     const label = document.createElement('h3');
     label.className = 'category-label';
-    label.textContent = cat;
+    label.innerHTML = cat;
 
     const rail = document.createElement('div');
     rail.className = 'rail';
@@ -195,7 +195,7 @@ renderWorks("personnal");
 // ── Render hero subtitle ──────────────────────────────────────────────────────
 (function renderHeroSubtitle() {
   const el = document.getElementById('heroSubtitle');
-  if (el) el.textContent = PROFILE.heroSubtitle;
+  if (el) el.innerHTML = PROFILE.heroSubtitle;
 })();
 
 // ── Render "En ce moment" card ────────────────────────────────────────────────
