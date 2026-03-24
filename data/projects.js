@@ -129,25 +129,15 @@ export const UNIVERSITY_PROJECTS = [
 ];
 
 export const PERSONNAL_PROJECTS = [
-  // TODO projets à ajouter
-  /*{
-    title: "Tableau de bord étudiant (Web)",
-    tags:[],
-    description:"",
-    links:[
-      {label:"Lire", href:"#"},
-      {label: "GitHub", icon: "icon-github", href: ""}
-    ],
-    img: ""
-  },
   {
-    title: "Tableau de bord étudiant (App Mobile)",
-    tags:[],
-    description:"",
-    links:[
-      {label:"Lire", href:"#"},
-      {label: "GitHub", icon: "icon-github", href: ""}
+    title: "Portfolio personnel",
+    tags: ["HTML5", "CSS", "JavaScript", "Vanilla JS"],
+    description: "Ce portfolio. Conçu et développé from scratch en HTML/CSS/JS vanilla, sans framework. Architecture orientée données, animations canvas et CSS, thème clair/sombre.",
+    details: "Projet personnel conçu et développé entièrement en HTML, CSS et JavaScript vanilla, sans framework ni bundler.\nL'architecture repose sur une séparation claire entre les données (fichiers JS exportant les constantes de profil, projets, compétences, contact) et le rendu (main.js qui consomme ces données et génère le DOM dynamiquement).\nLe portfolio intègre plusieurs animations : un fond de particules interactif sur canvas, un effet de tilt 3D sur la carte hero, des boutons magnétiques, et des animations d'apparition via IntersectionObserver.\nLe thème clair/sombre est géré via un attribut data-theme sur la racine HTML, persisté en localStorage, avec synchronisation de la meta theme-color pour les navigateurs mobiles.\nLes icônes sont centralisées sous forme de sprite SVG inline, référencées par <use href=\"#id\"> pour éviter les répétitions et faciliter la maintenance.\nLa navigation mobile est gérée en JS pur (burger menu, fermeture au clic extérieur, touche Escape).",
+    links: [
+      { label: "Lire", href: "#" },
+      { label: "GitHub", href: "https://github.com/DorianPRJ7/Portfolio" }
     ],
     img: ""
-  }*/
+  }
 ]
