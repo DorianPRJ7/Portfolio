@@ -55,10 +55,10 @@ const railUniversityProjects = document.getElementById('railUniversityProjects')
 const railPersonnalProjects = document.getElementById('railPersonnalProjects');
 
 const CATEGORY_ORDER = [
-  "Développement Web",
-  "Développement Logiciel",
+  "D&eacute;veloppement Web",
+  "D&eacute;veloppement Logiciel",
   "Algorithmique & IA",
-  "Bases de données"
+  "Bases de donn&eacute;es"
 ];
 
 const LINK_ICONS = {
@@ -232,7 +232,7 @@ renderWorks("personnal");
       ? `<strong><em>Applications des concepts&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.projects.join(', ')}</span>`
       : '';
     const hr = i < EDUCATION.length - 1 ? '<hr />' : '';
-    return `<p><strong>${e.title}</strong> - ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
+    return `<p><strong>${e.title}</strong> - ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Comp&eacute;tences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
   }).join('');
 })();
 
@@ -246,7 +246,7 @@ renderWorks("personnal");
   const socialsHtml = CONTACT.socials.map(s =>
     `<a class="social" target="_blank" href="${s.href}" aria-label="${s.label}" rel="noopener noreferrer"><svg width="30" height="30" role="img" viewBox="${s.viewBox}" fill="currentColor"><use href="#${s.icon}"></use></svg></a>`
   ).join('');
-  panel.innerHTML = `<p>${CONTACT.intro}</p><div class="contact-blocks"><div class="contact-col"><h3>Mes informations de contact&nbsp;:</h3><ul class="contact-list">${contactsHtml}</ul></div><div class="contact-col"><h3>Mes réseaux&nbsp;:</h3><div class="socials">${socialsHtml}</div></div></div>`;
+  panel.innerHTML = `<p>${CONTACT.intro}</p><div class="contact-blocks"><div class="contact-col"><h3>Mes informations de contact&nbsp;:</h3><ul class="contact-list">${contactsHtml}</ul></div><div class="contact-col"><h3>Mes r&eacute;seaux&nbsp;:</h3><div class="socials">${socialsHtml}</div></div></div>`;
 })();
 
 document.addEventListener("click", (e) => {

@@ -1,30 +1,30 @@
 export const EDUCATION = [
   {
     title: "Licence&nbsp;3&nbsp;Informatique",
-    institution: "Université&nbsp;de&nbsp;Lorraine",
+    institution: "Universit&eacute;&nbsp;de&nbsp;Lorraine",
     period: "2025-&nbsp;en&nbsp;cours",
     concepts: [
       "PHP", "HTML5/CSS", "JavaScript", "Sessions/Cookies", "C++/POO",
       "Oracle/PL-SQL", "Triggers", "MCD/MLD", "Angular", "TypeScript",
       "Ionic", "Capacitor", "Python/ML", "Pandas", "Scikit-learn",
-      "Design Patterns", "Réseaux", "Commandes réseau"
+      "Design Patterns", "R&eacute;seaux", "Commandes r&eacute;seau"
     ],
     projects: [
       "Site&nbsp;Cocktails&nbsp;(PHP)",
       "Location&nbsp;Oracle&nbsp;(PL/SQL+Triggers)",
-      "Apprentissage&nbsp;supervisé&nbsp;(Python/ML)",
-      "Géométrie&nbsp;2D&nbsp;(C++/Java)",
+      "Apprentissage&nbsp;supervis&eacute;&nbsp;(Python/ML)",
+      "G&eacute;om&eacute;trie&nbsp;2D&nbsp;(C++/Java)",
       "Angular&nbsp;(Single&nbsp;Page&nbsp;Application)",
-      "Ionic&nbsp;(App&nbsp;de&nbsp;gestion&nbsp;de&nbsp;films/séries)"
+      "Ionic&nbsp;(App&nbsp;de&nbsp;gestion&nbsp;de&nbsp;films/s&eacute;ries)"
     ]
   },
   {
     title: "Licence&nbsp;2&nbsp;Informatique",
-    institution: "Université&nbsp;de&nbsp;Lorraine",
+    institution: "Universit&eacute;&nbsp;de&nbsp;Lorraine",
     period: "2024-&nbsp;2025",
     concepts: [
-      "Java/POO", "IHM/JavaFX", "Algorithmique", "Récursivité",
-      "Complexité en temps", "Graphes", "IA", "Réseaux", "Systèmes"
+      "Java/POO", "IHM/JavaFX", "Algorithmique", "R&eacute;cursivit&eacute;",
+      "Complexit&eacute; en temps", "Graphes", "IA", "R&eacute;seaux", "Syst&egrave;mes"
     ],
     projects: [
       "UNO&nbsp;(Java)",
@@ -35,17 +35,17 @@ export const EDUCATION = [
   },
   {
     title: "Licence&nbsp;1&nbsp;Informatique",
-    institution: "Université&nbsp;de&nbsp;Lorraine",
+    institution: "Universit&eacute;&nbsp;de&nbsp;Lorraine",
     period: "2023-&nbsp;2024",
     concepts: [
-      "C", "Gestion&nbsp;de&nbsp;la&nbsp;mémoire", "Pointeurs", "Algorithmique",
+      "C", "Gestion&nbsp;de&nbsp;la&nbsp;m&eacute;moire", "Pointeurs", "Algorithmique",
       "HTML5/CSS", "Bases PHP"
     ],
     projects: []
   },
   {
-    title: "Baccalauréat&nbsp;général&nbsp;-&nbsp;Spécialités&nbsp;Mathématiques&nbsp;et&nbsp;Informatique&nbsp;(NSI)",
-    institution: "Lycée&nbsp;Charles&nbsp;Jully&nbsp;Saint-Avold",
+    title: "Baccalaur&eacute;at&nbsp;g&eacute;n&eacute;ral&nbsp;-&nbsp;Sp&eacute;cialit&eacute;s&nbsp;Math&eacute;matiques&nbsp;et&nbsp;Informatique&nbsp;(NSI)",
+    institution: "Lyc&eacute;e&nbsp;Charles&nbsp;Jully&nbsp;Saint-Avold",
     period: "2021-&nbsp;2022",
     concepts: ["Algorithmique", "Python", "HTML4/CSS", "SQL", "Bases de POO"],
     projects: []
