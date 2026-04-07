@@ -56,9 +56,9 @@ const railUniversityProjects = document.getElementById('railUniversityProjects')
 const railPersonnalProjects = document.getElementById('railPersonnalProjects');
 
 const CATEGORY_ORDER = [
-  "D&eacute;veloppement Web",
+  "D&eacute;veloppement Web&nbsp;&&nbsp;Mobile",
   "D&eacute;veloppement Logiciel",
-  "Algorithmique & IA",
+  "Algorithmique&nbsp;&&nbsp;IA",
   "Bases de donn&eacute;es"
 ];
 
