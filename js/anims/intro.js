@@ -81,7 +81,7 @@
     <div class="intro__grid"></div>
     <div class="intro__ring"></div>
     <div class="intro__mask">
-      <div class="intro__title">Dorian&nbsp;Pareja</div>
+      <div class="intro__title">Dorian Pareja</div>
       <div class="intro__subtitle">Portfolio · L3 informatique</div>
     </div>
     <div class="intro__wipe"></div>

@@ -56,9 +56,9 @@ const railUniversityProjects = document.getElementById('railUniversityProjects')
 const railPersonnalProjects = document.getElementById('railPersonnalProjects');
 
 const CATEGORY_ORDER = [
-  "Développement Web&nbsp;&&nbsp;Mobile",
+  "Développement Web & Mobile",
   "Développement Logiciel",
-  "Algorithmique&nbsp;&&nbsp;IA",
+  "Algorithmique & IA",
   "Bases de données"
 ];
 
@@ -230,10 +230,10 @@ renderWorks("personnal");
   if (!panel) return;
   panel.innerHTML = EDUCATION.map((e, i) => {
     const projectsHtml = e.projects.length
-      ? `<strong><em>Applications des concepts&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.projects.join(', ')}</span>`
+      ? `<strong><em>Applications des concepts : </em></strong><br/><span style="display:block;padding-left:3%">${e.projects.join(', ')}</span>`
       : '';
     const hr = i < EDUCATION.length - 1 ? '<hr />' : '';
-    return `<p><strong>${e.title}</strong> - ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences&nbsp;: </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
+    return `<p><strong>${e.title}</strong> - ${e.institution} (${e.period})<br/><span style="color:var(--muted)"><strong><em>Concepts et Compétences : </em></strong><br/><span style="display:block;padding-left:3%">${e.concepts.join(', ')}</span>${projectsHtml}</span></p>${hr}`;
   }).join('');
 })();
 
@@ -242,12 +242,12 @@ renderWorks("personnal");
   const panel = document.getElementById('contactPanel');
   if (!panel) return;
   const contactsHtml = CONTACT.contacts.map(c =>
-    `<li><strong>${c.label}&nbsp;:</strong> <a href="${c.href}">${c.display}</a></li>`
+    `<li><strong>${c.label} :</strong> <a href="${c.href}">${c.display}</a></li>`
   ).join('');
   const socialsHtml = CONTACT.socials.map(s =>
     `<a class="social" target="_blank" href="${s.href}" aria-label="${s.label}" rel="noopener noreferrer"><svg width="30" height="30" role="img" viewBox="${s.viewBox}" fill="currentColor"><use href="#${s.icon}"></use></svg></a>`
   ).join('');
-  panel.innerHTML = `<p>${CONTACT.intro}</p><div class="contact-blocks"><div class="contact-col"><h3>Mes informations de contact&nbsp;:</h3><ul class="contact-list">${contactsHtml}</ul></div><div class="contact-col"><h3>Mes réseaux&nbsp;:</h3><div class="socials">${socialsHtml}</div></div></div>`;
+  panel.innerHTML = `<p>${CONTACT.intro}</p><div class="contact-blocks"><div class="contact-col"><h3>Mes informations de contact :</h3><ul class="contact-list">${contactsHtml}</ul></div><div class="contact-col"><h3>Mes réseaux :</h3><div class="socials">${socialsHtml}</div></div></div>`;
 })();
 
 document.addEventListener("click", (e) => {
